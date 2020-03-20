@@ -1,0 +1,20 @@
+import React from 'react';
+import '../App.css';
+import Header from '../components/Header.js';
+import Footer from '../components/Footer.js';
+import underConstructionSvg from '../components/undraw_work_in_progress_uhmv.svg';
+
+function Whitepaper() {
+  return (
+    <div className="App">
+      <Header />
+      <div className="fullBleedContainer">
+      <div className="fullBleedTitle">sorry, our website is still under construction..</div>
+        <img className="fullBleedImage" src={underConstructionSvg} />
+      </div>
+      <Footer />
+    </div>
+  );
+}
+
+export default Whitepaper;

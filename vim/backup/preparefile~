@@ -1,0 +1,23 @@
+art=~/bin/orgmode/ascii
+file=~/Documents/org-mode/$(date +%d.txt)
+if [[ -f "$file" ]]; then
+    exit 
+else
+     cd ~/Documents/org-mode && find . -maxdepth 1 -type f -exec mv {} ./jan \; && cp ./jan/$(ls -t ./jan | head -1) $(date +%d.txt)
+
+#    echo "\n" >> $file
+#    echo "**$(date '+%A %d-%B, %Y')**\n" >> $file
+#    echo "# Daily Algorithm" >> $file
+#    echo "- [] " >> $file
+#    echo "## Uni" >> $file
+#    echo "- [] " >> $file
+#    echo "## Dev" >> $file
+#    echo "- [] " >> $file
+#    echo "# Projects" >> $file
+#    echo "## Ager" >> $file
+#    echo "- [] " >> $file
+#    echo "## Adid" >> $file
+#    echo "- [] " >> $file
+#    echo "## Apov" >> $file
+#    echo "- [] " >> $file
+fi

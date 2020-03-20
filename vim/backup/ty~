@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Ty Yiu
+N:Yiu;Ty;;;
+TEL;TYPE=CELL:+49 1712230998
+EMAIL;TYPE=HOME:Tyronyiu@gmail.com
+EMAIL;TYPE=WORK:yiu@apov-labs.com
+EMAIL;TYPE=UNI:Tyiu2017@student.hult.edu
+ORG:APOV
+NOTE:John Doe has a long and varied history\, being documented on more police files that anyone else. Reports of his death are alas numerous.
+X-SOCIALPROFILE;type=instagram;x-user=overcast_vowel:http://instagram.com/overcasst_vowel
+X-SOCIALPROFILE;type=snapchat;x-user=Claudio4848:http://snapchat.com/add/claudio4848
+END:VCARD

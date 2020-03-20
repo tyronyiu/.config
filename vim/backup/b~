@@ -1,0 +1,57 @@
+#!/bin/bash
+##
+# shell bookmarks with fzf
+#
+# @param {string} [$1] Defined bookmark string.
+##
+function b() {
+    # Bookmarks
+    local -A bookmarks=(
+        'e' "~/Desktop/"
+        'd' "~/Documents/"
+        'w' "~/Downloads/"
+        'i' "~/Pictures/"
+        'r' "~/repos/"
+        #'v' "~/Videos/"
+    )
+
+    local selected_bookmark
+
+    if [[ "$1" != '' ]] 
+    then
+        selected_bookmark="${bookmarks[$1]}"
+    else
+        local bookmarks_table
+
+        local key
+        for key in ${bookmarks}
+        do
+            bookmarks_table+="$key ${bookmarks[$key]}\n"
+        done
+        if (! hash fzf &>/dev/null) 
+        then
+            echo; echo "error: fzf is required for selection menu."; echo
+
+            return 1
+        else
+            selected_bookmark=$(
+                printf "$bookmarks_table" \
+                    | fzf \
+                        --exact \
+                        --height='20%' \
+                        --preview='eval ls --almost-all --classify --color=always --group-directories-first --literal $(echo {} | cut --delimiter=" " --fields=2 -) 2>/dev/null' \
+                        --preview-window='right:80%' \
+                    | cut --delimiter=' ' --fields=2
+            )
+        fi
+    fi
+
+    if [[ "$selected_bookmark" != '' ]] 
+    then
+        eval cd "$selected_bookmark"
+    else
+        echo; echo 'error: Could not find any bookmark to jump in.'; echo
+
+        return 1
+        fi
+b

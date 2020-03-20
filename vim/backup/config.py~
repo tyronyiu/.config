@@ -1,0 +1,36 @@
+config.bind('<Ctrl-Shift-y>', 'hint links spawn --detach mpv --force-window yes {hint-url}')
+c.statusbar.position = 'bottom'
+c.tabs.position = 'bottom'
+c.url.searchengines = {"DEFAULT": "https://google.com/search?q={}", "dg": "https://duckduckgo.com/?search={}","g": "https://google.com/?search={}"}
+c.url.start_pages = ["https://www.google.com/"]
+config.bind('J', 'tab-prev')
+config.bind('K', 'tab-next')
+config.bind('gh','open -t https://www.google.com/')
+c.session.lazy_restore = true
+c.scrolling.bar = true
+
+# -----------------------------------------------------------------------------
+# Open new tabs (middleclick/ctrl+click) in the background.
+
+c.tabs.background = True
+# -----------------------------------------------------------------------------
+
+# -----------------------------------------------------------------------------
+# Behavior when the last tab is closed.
+# Valid values:
+#   - ignore: Don't do anything.
+#   - blank: Load a blank page.
+#   - startpage: Load the start page.
+#   - default-page: Load the default page.
+#   - close: Close the window.
+
+c.tabs.last_close = "close"
+# -----------------------------------------------------------------------------
+
+
+# -----------------------------------------------------------------------------
+# Enable smooth scrolling for web pages. Note smooth scrolling does not
+# work with the `:scroll-px` command.
+
+c.scrolling.smooth = False
+# -----------------------------------------------------------------------------

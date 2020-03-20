@@ -1,0 +1,4 @@
+network={
+    ssid="Hult-Wifi"
+    psk="Hult-Wifi"
+}

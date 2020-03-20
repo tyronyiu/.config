@@ -1,0 +1,14 @@
+import React from "react";
+
+export default () => (
+  <div className="app">
+    <div className="container">
+        <div className="red">
+        </div> 
+        <div className="blue">
+        </div>
+        <div className="green">
+        </div>
+    </div>
+  </div>
+);

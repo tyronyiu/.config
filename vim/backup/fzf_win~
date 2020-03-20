@@ -1,0 +1,9 @@
+#!/bin/sh
+#launch session "Default Session"
+osascript -e'
+tell application "iTerm2"
+    set newWindow to (create window with default profile)
+    tell current session of newWindow
+        command "bash -c foa"
+    end tell
+end tell'

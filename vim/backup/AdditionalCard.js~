@@ -1,0 +1,70 @@
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    padding: theme.spacing(3, 2),
+    backgroundColor: '#17171d',
+    flex: 1,
+    margin: '1em',
+      lineHeight: 2,
+ [theme.breakpoints.down('sm')]: {
+     flex: 'none', width: '80%', marginLeft: 'auto', marginRight: 'auto',  
+    },
+  },
+  sec: {
+    textAlign: 'left',
+    padding: '5%',
+    },
+}));
+
+
+
+export default function AdditionalCard() {
+  const classes = useStyles();
+  return (
+      <Paper className={classes.root}>
+      <div className="PaperBox">
+        <Typography variant="h5" component="h3" color="secondary">
+        Premium Version 🎉 <br />
+        </Typography>
+        <Typography component="p" color="primary" className={classes.sec}>
+
+A big new feature coming with premium is the upcoming wallet integration. 📲 
+You will be able to load your Adid connect-code into the apple wallet and show it directly, 
+by double-pressing the Siri-button, like you would show a boarding pass or use apple pay. <br />
+
+Premium will soon include the color and logo customisation of your connect-code,
+so that yours doesn't look like everybody else's 😎! <br />
+
+Everybody wants more choice and abilities, so we are working hard on getting that done for you in the form of more fields! 
+We Will include more fields like your work-email, linkedIn, website, more social
+      accounts, or adress. Also you will very soon be able to include an image
+      of yourself! 📸 <br />
+        </Typography>
+      </div>
+      </Paper>
+  );
+}
+
+
+{/*
+
+        ● Con­nect to any people's plat­form ac­count at once! 📲<br />
+
+        ● Go for the in­nov­at­ive busi­ness card with Adid!<br />
+
+        ● 🌐 Net­work­ing made simple! <br />
+
+        ● Share your con­tact de­tails with one tap at the tip of your fin­gers.<br />
+
+        ● Nev­er type in a wrong num­ber. 📵<br />
+
+        ● Eas­ily cre­ate your first digi­tal con­tact card.<br />
+
+        ● Nev­er buy busi­ness cards again - Re­tain the en­vir­on­ment.🌳🌱<br />
+
+        ● Busi­ness of the fu­ture with the busi­ness card of the fu­ture!<br />
+*/}

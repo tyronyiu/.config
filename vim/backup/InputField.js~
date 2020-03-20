@@ -1,0 +1,75 @@
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import QRCode from 'react-qr-code';
+
+const text= `
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+CATEGORIES:MEETING
+STATUS:TENTATIVE
+DTSTART:20190912T133000Z
+DTEND:20190912T143000Z
+SUMMARY:
+`
+const text2= `
+GEO:48.85299;2.36885
+DESCRIPTION:will have our first meeting, talk about what we are going to do
+CLASS:PRIVATE
+END:VEVENT
+END:VCALENDAR
+`
+
+class InputField extends Component {
+
+
+  constructor(props){
+    super(props)
+    this.state = {
+        input:"test"
+    }
+this.handleClick= this.handleClick.bind(this);
+  }
+
+
+  handleClick(e){
+      this.setState({
+          input: this.nameTextInput.value
+      });
+  }
+
+ componentDidUpdate (){
+    ReactDOM.findDOMNode(this.nameTextInput).focus();
+  }
+
+    render(){
+    return (
+      <div>
+        <input ref={(ref) => this.nameTextInput = ref} className="textinputfield" type="text"  />
+        <input
+          type="button"
+          value="Save"
+          onClick={this.handleClick}
+        />
+        <div className="qrcode" >
+        <QRCode value={text + this.state.input + text2} size="512" />
+        </div>
+      </div>
+    );
+    };
+};
+export default InputField
+
+
+    {/*
+        this.handleChange = this.handleChange.bind(this);
+  handleChange(e){
+    this.setState({ input: e.target.value });
+  }
+  onChange={ this.handleChange }
+
+
+    this.setState({ input: e.target.value });
+
+    this.nameTextInput.value = '';
+    */}

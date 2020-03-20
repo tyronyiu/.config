@@ -1,0 +1,91 @@
+import React from 'react';
+import '../App.css';
+
+function WorkCard() {
+  return (
+    <div className="maincard">
+      <div className="cardTitle workCard">
+      <h2>Command modules at work</h2>
+      <div className="cardSubtitle">
+      Easen workflows with smart automations, and collaborate better with fast and intelligent content sharing.
+      <br />
+      </div>
+      </div>
+
+
+<div className="cardSectionBox">
+
+      <div className="cardSection">
+      <h3 className="cardSectionTitle">Harness the power of automation!</h3>
+      <hr className="smallRuler"/>
+      <div className="cardSectionText">
+      Command modules can be used with nearly everything, physical or digital, as long
+        as connected to your phone. Control any routine or workload
+        that is done on the internet - paired to a smart device, phone or
+        computer. <br />
+      <br />
+      </div>
+      </div>
+
+      <div className="cardSection">
+      <h3 className="cardSectionTitle">Scrum and daily standup</h3>
+      <hr className="smallRuler"/>
+      <div className="cardSectionText">
+      Ping your team members to gather for a meeting with a wave of your phone
+        instead of walking around the office and waving your hand or sending an
+        email.<br/ ><br />
+      </div>
+      </div>
+
+      <div className="cardSection">
+      <h3 className="cardSectionTitle">Document sharing</h3>
+      <hr className="smallRuler"/>
+      <div className="cardSectionText">
+      Frequently share files with the same coworkers? Command modules can be set
+        up for individuals, and can accept a document to be immediately shared or to be
+        collaborated on.<br/ ><br />
+      </div>
+      </div>
+
+      <div className="cardSection">
+      <h3 className="cardSectionTitle">Commute ETA's</h3>
+      <hr className="smallRuler"/>
+      <div className="cardSectionText">
+      Let your loved ones know when you are home. An unexpected hold up or an
+        early end-of-day can be identified by command modules - never again a failed
+        surprise!<br/ >
+      <br />  
+      </div>
+      </div>
+
+      <div className="cardSection">
+      <h3 className="cardSectionTitle">Future proof</h3>
+      <hr className="smallRuler"/>
+      <div className="cardSectionText">
+      Let your loved ones know when you are home. An unexpected hold up or an
+        early end-of-day can be identified by command modules - never again a failed
+        surprise!<br/ >
+      <br />  
+      </div>
+      </div>
+
+      <div className="cardList homeList">
+      Compatible with:<br />
+      <ul className="cardListItems">
+      <li>Apple Homekit</li>
+      <li>IFTT (If this then that)</li>
+      <li>Microsoft Flow</li>
+      <li>Slack</li>
+      <li>AirDrop</li>
+      </ul>
+      </div>
+
+</div>
+
+
+
+      </div>
+  );
+}
+
+export default WorkCard;

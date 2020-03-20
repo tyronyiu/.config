@@ -1,0 +1,11 @@
+#!/bin/zsh
+alias \
+    ls="ls" \
+    v="nvim" \
+    vim="nvim" \
+    szrc="source ~/.zshrc" \
+    svrc="source ~/.vimrc" \
+    envim="v ~/.config/nvim/init.vim" \
+    gh="cd ~/" \
+    evrc="vim ~/.vimrc" \
+    ezrc="vim ~/.zshrc" \

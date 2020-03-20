@@ -1,0 +1,38 @@
+redraw() {
+        local str width height length
+        width=$(tput cols)
+        height=$(tput lines)
+        file=~/bin/orgmodeascii
+        str="$(date +\"%d\".txt)"
+        str1="is being created"
+        str2="entering org-mode"
+        length=${#str}
+        length1=${#str1}
+        length2=${#str2}
+        clear
+        tput civis
+        i=1
+        end=$[$(wc -l < $file)+1]
+        length0=54
+        while [ $i -le $end ]; do
+            # length0=$(sed "${i}q;d" $file | wc -m)
+            tput cup $i $(((width / 2) - (length0 / 2)))
+            echo "$(sed "${i}q;d" $file)"
+            i=$(($i+1))
+        done
+        tput cup $((height / 2)) $(((width / 2) - (length / 2)))
+        echo "$str"
+        tput cup $[$height/2+1] $(((width / 2) - (length1 / 2)))
+        echo "$str1"
+        tput cup $[$height/2+3] $(((width / 2) - (length1 / 2)))
+        echo "$str2"
+    }
+
+    trap redraw WINCH
+
+    redraw
+    while true; do
+        sleep 2
+        tput cnorm
+        break
+    done

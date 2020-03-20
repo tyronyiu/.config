@@ -1,0 +1,158 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <title>
+            title
+        </title> 
+        <link rel="stylesheet" href="index.css" type="text/css"> 
+        <script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js">
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="header vertical-center inset">
+                <div class="medTitle Twhite Tright">
+                    Addon by Pluto
+                </div>
+            </div>
+            <div class="twotofive hero-img isgrid fullbleed">
+                <!--
+                    <img class="fullscreen"
+                    src="https://images.unsplash.com/photo-1501127122-f385ca6ddd9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80"
+                    alt="error 404">
+                -->
+                <div class="bigTitle pad blurbg Twhite atbottom ">
+                    Scarf Genova Triangle Graphic
+                    <div style="font-weight: 400; font-size: 4rem;">€229.00</div>
+                </div>
+            </div>
+            <!--
+                <div class="scrollTip">
+                Scroll down
+                <img src="./arrow.svg" height="50px">
+                </div>
+            -->
+            <div class="container centerxy">
+                <img class="gallery rounded" src="https://muchogusto.nl/wp-content/uploads/2020/01/S01GEN011F-1.jpg"></img>
+            </div>
+            <div class="container centerxy">
+                <img class="gallery rounded" src="https://muchogusto.nl/wp-content/uploads/2020/01/S01GEN011F_1-1.jpg"></img>
+            </div>
+            <div class="container centerxy">
+                <img class="gallery rounded" src="https://muchogusto.nl/wp-content/uploads/2019/11/I9204110101_Patchwork_19.jpg"></img>
+            </div>
+            <div class="container centerxy">
+                <img class="gallery rounded" src="https://muchogusto.nl/wp-content/uploads/2019/11/S92STZ041-1.jpg"></img>
+            </div>
+            <div class="container centerxy">
+                <img class="gallery rounded" src="https://muchogusto.nl/wp-content/uploads/2019/03/S91POR063.jpg"></img>
+            </div>
+            <div class="container centerxy">
+                <img class="gallery rounded" src="https://muchogusto.nl/wp-content/uploads/2019/03/I9106310101_P914.018_patchwork.jpg"></img>
+            </div>
+            <div class="container centerxy">
+                <img class="gallery rounded" src="https://muchogusto.nl/wp-content/uploads/2019/11/S92FBF125.jpg"></img>
+            </div>
+            <div class="container centerxy">
+                <img class="gallery rounded" src="https://muchogusto.nl/wp-content/uploads/2019/10/I9212511001_S92.050_Francis_bay_Extra_Mis_2.jpg"></img>
+            </div>
+            <div class="container centerxy">
+                <img class="gallery rounded" src="https://muchogusto.nl/wp-content/uploads/2019/11/S92BER030.jpg"></img>
+            </div>
+            <div class="container section1">
+                    <div class="sectionTitle">
+                Product details                 
+                    </div>
+                <div class="paragraph spacedvertsm rounded pad">
+                    <ul>
+                        <li>
+                            Size: 220 x 140 x 140 cm
+                        </li>
+                        <li>
+                            Shape: Triangle
+                        </li>
+                        <li>
+                            Material: 100% Polyester
+                        </li>
+                    </ul>
+                    <div style="font-weight: 400; font-family: avenir next;">
+Although the above example works in almost every situation, it is generally a better idea to have the CSS in a separate, external CSS file. Below is the CSS and HTML that can be used to remove bullets.
+Using the CSS below removes bullets from all unordered links (<ul>), which can be useful if you have no intentions of using bullets or want to use an image instead of a bullet.
+                    </div>
+                </div>
+                <div class="list pad rounded spacedvertbig">
+                    <table border=1 frame=void rules=rows>
+                        <!--
+                            <caption>Monthly savings</caption>
+                        -->
+                        <tr>
+                            <th>Month</th>
+                            <th>Price</th>
+                        </tr>
+                        <tr>
+                            <td>January</td>
+                            <td>$100</td>
+                        </tr>
+                        <tr>
+                            <td>February</td>
+                            <td>$50</td>
+                        </tr>
+                        <tr>
+                            <td>March</td>
+                            <td>$50</td>
+                        </tr>
+                        <tr>
+                            <td>April</td>
+                            <td>$50</td>
+                        </tr>
+                        <tr>
+                            <td>May</td>
+                            <td>$50</td>
+                        </tr>
+                    </table>
+                </div>
+                <img class="fullbleed spacedvertsm"
+                     src="https://www.addonbypluto.com/wp-content/uploads/2019/10/MuchoGusto.jpg"
+                     alt="error 404">
+            </div>
+            <div class="container title centerxy sectionTitle">
+                contact section
+            </div>
+            <div class="container centerxy envelope elevated rounded button">
+                <a href="mailto:info@addonbypluto.com">
+                    <svg class="icon lnr lnr-envelope"><use xlink:href="#lnr-envelope"></use></svg>
+                </a>
+            </div>
+            <div class="container centerxy">
+                +
+            </div>
+            <div class="container centerxy logobg">
+            </div>
+            <div class="container centerxy phone elevated rounded button">
+                <a href="./contact.vcf">
+                    <svg class="icon lnr lnr-phone-handset"><use xlink:href="#lnr-phone-handset"></use></svg>
+                </a>
+            </div>
+            <div class="container centerxy">
+                +
+            </div>
+            <div class="container centerxy">
+                +
+            </div>
+            <div class="container centerxy frame elevated rounded button">
+                <a  href="http://www.addonbypluto.com">
+                    <svg class="icon lnr lnr-frame-expand"><use xlink:href="#lnr-frame-expand"></use></svg>
+                </a>
+            </div>
+
+            <div class="footer">
+                <div class="medTitle Tright">addon by pluto @ ager</div>
+                <div class="flexbox">
+                    <div class="medTitle">Impressum</div>
+                    <div class="medTitle">Official website</div>
+                </div>
+            </div>
+        </div>
+    </body> 
+</html>

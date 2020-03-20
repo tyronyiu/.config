@@ -1,0 +1,13 @@
+graph TD
+A(home/main screen)-->B[/tap on plus icon next to your power points/]
+B-->C[present 'add points' screen]
+C-->D{'buy points' or 'play to win'}
+D-->E[present 'choose purchase option' screen]
+D-->F[present 'game' screen]
+D-->M(cancel)
+E-->G{choose amount of points}
+G-->K(cancel)
+G-->H{choose payment method}
+H-->L(cancel)
+H-->I[return success or failure of payment]
+F-->J[return earned points]

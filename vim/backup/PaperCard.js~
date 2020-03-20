@@ -1,0 +1,38 @@
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
+import WhatCard from './WhatCard.js';
+import FeaturesCard from './FeaturesCard.js';
+import AdditionalCard from './AdditionalCard.js';
+
+const useStyles = makeStyles(theme => ({
+  root: {
+     display: 'flex',
+      paddingLeft: '2em',
+      paddingRight: '2em',
+ [theme.breakpoints.down('sm')]: {
+     display: 'block',
+      padding: '1em',
+    },
+  },
+}));
+
+export default function PaperCard(props) {
+  const classes = useStyles();
+      if (props.no == 1) {
+  return (
+    <div className={classes.root}>
+        <WhatCard />
+        <FeaturesCard />
+              </div>
+  )
+      }
+      else if (props.no == 2) {
+  return (
+    <div className={classes.root}>
+        <AdditionalCard />
+              </div>
+  )
+      }
+}

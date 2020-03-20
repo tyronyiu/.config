@@ -1,0 +1,13 @@
+https://github.com/koekeishiya/yabai/wiki/Configuration#window-modifications
+https://github.com/neoclide/coc.nvim
+https://github.com/neoclide?page=1
+https://github.com/neoclide/coc-stylelint
+https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/
+https://github.com/preservim/nerdcommenter
+https://github.com/jiangmiao/auto-pairs
+https://github.com/preservim/nerdtree#can-i-have-different-highlighting-for-different-file-extensions
+https://github.com/koekeishiya/yabai/wiki/Configuration#configuration-file
+
+
+
+

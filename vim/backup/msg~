@@ -1,0 +1,38 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]
+  then
+    echo -e "No arguments supplied\n"
+    echo -e "Usage: msg xxxx,yyyy"
+    echo -e "where x = name of recipient, y = message to send"
+    exit 1
+fi
+
+# The array should have two fields, the title [0] and the description [1].
+IFS=',' read -r -a array <<< "$@"
+
+#echo ${array[0]}
+
+if [[ ${array[0]} == "max" ]] 
+    then
+    #$array[0]="mgirthofer@gmail.com"
+    array[0]="mgirthofer@gmail.com"
+    #echo ${array[0]}
+fi
+array[1]=${array[@]:1}
+echo -e "\nRecipient:\n${array[0]}"
+echo -e "----------\nMessage:\n${array[1]}\n"
+echo -e "Do you wish to send the message? 📤"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) break;;
+        No ) exit;;
+    esac
+done
+
+osascript -e ' tell application "Messages"
+    set theService to first service whose service type = iMessage
+    set theBuddy to buddy "'"${array[0]}"'" of theService
+    send  "'"${array[1]}"'" to theBuddy
+    end tell '
+echo "Sent"

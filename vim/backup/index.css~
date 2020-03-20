@@ -1,0 +1,302 @@
+body{margin: 0; font-family: futura;}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.wrapper{
+    background: #EFEEEE;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-auto-rows:minmax(15vh, auto);
+    grid-gap:1em;
+    animation: fadein 4s;
+    -moz-animation: fadein 4s; /* Firefox */
+    -webkit-animation: fadein 4s; /* Safari and Chrome */
+    -o-animation: fadein 4s; /* Opera */
+}
+
+.wrapper > .container{
+    padding:1em;
+}
+
+.wrapper > .container:nth-child(odd){
+}
+
+.fullscreen{
+    grid-column:1/4;
+    grid-row:1/7;
+    background-position: right;
+}
+
+.fullscreen > .title{
+    grid-column: 1/4;
+    grid-row: 2/3;
+    z-index: 1;
+    padding: 1em;
+    font-weight: 800;
+    font-family: Futura;
+    font-size: 8em;
+    color: white;
+}
+
+.fullscreen > .title::before{
+    filter: blur(12px); 
+}
+
+.scrollTip{
+position: relative;
+    bottom: 5vh;
+    grid-column: 2/3;
+    grid-row: 6/7;
+    color: white;
+    font-family: helvetica neue;
+    font-size: 2em;
+    font-weight: 300;
+    display: grid;
+    justify-items: center;
+    width: 100%;
+    opacity: 0.7;
+    height: 7vh;
+}
+
+.section1{
+    grid-column: 1/4;
+ /*   grid-row: 7/14;*/
+    font-size: 8rem;
+    font-family: Futura;
+    font-weight: 300;
+}
+
+.sectionTitle{
+    font-size: 3.5rem;
+    font-family: Futura;
+    font-weight: 300;
+    grid-column: 1/3;
+}
+
+.paragraph{
+    font-size: 1.5rem;
+}
+
+.paragraph > ul {
+    font-family: avenir next;
+    font-weight: 500;
+    list-style: none;
+    padding: 0;
+}
+
+.fullbleed{
+    position: relative;
+    width: 100%;
+}
+
+.elevated{
+    /*box-shadow: 9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5);*/
+/*    box-shadow: 12px 12px 12px #D1CDC7, -12px -12px 12px #ffffff;*/
+/*box-shadow:  47px 47px 93px #c8c8c8, -47px -47px 93px #ffffff;*/
+    box-shadow:  6px 6px 11px #c8c8c8, -6px -6px 11px #ffffff;
+    /*border: 1px solid rgba(255,255,255,0.2);*/
+}
+
+.rounded{
+    border-radius: 12px;
+}
+
+.hero-img{
+    background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),url(https://muchogusto.nl/wp-content/uploads/2019/11/S92BER030.jpg);
+    background-size:cover;
+}
+
+.twotofive{
+    grid-column: 1/4;
+    grid-row: 1/6;
+}
+
+.inset{
+    margin: 1em;
+}
+
+.medInset{
+    margin: 2em;
+}
+
+.bigInset{
+    margin: 4em;
+}
+
+.pad{
+    padding: 1em;
+}
+
+.bigPad{
+    padding: 4em;
+}
+
+.title{
+font-family: futura, sans-serif;
+font-size: 3rem;
+font-weight: 600;
+}
+
+.smallTitle{
+    font-family: futura;
+    font-size: 1rem;
+    padding: 1em;
+}
+
+.medTitle{
+    font-size: 2em;
+    padding: 1em;
+    font-family: futura;
+}
+
+.bigTitle{
+    font-size: 5rem;
+    font-weight: 800;
+    font-family: futura, sans-serif;
+}
+
+.Tright{
+text-align: right;
+}
+
+.header{
+grid-column: 1/4;
+grid-row: 1/2;
+    z-index: 1;
+    padding: 0 4rem;
+}
+
+.vertical-center{
+    align-self: center;
+}
+
+.isgrid{
+    display: grid;
+}
+
+.atbottom{
+    align-self: end;
+}
+
+.blurbg{
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 0 0 40px 40px;
+}
+
+.Twhite{
+    color: white;
+}
+
+.centerxy{
+    align-self: center;
+    justify-self: center;
+}
+
+.footer{
+    grid-column: 1/4;
+    background: #ddd;
+}
+
+.flexbox{
+    display: flex;
+    flex-flow: row-reverse wrap;
+    padding: 1em;
+}
+
+.logobg{
+    background: url(https://i.ibb.co/6sQx932/Philosophy.png);
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+}
+
+.envelope{
+
+}
+
+.phone{
+}
+
+.frame{
+
+}
+
+.gallery{
+    height: 100%;
+    width: 100%;
+}
+.button{
+    height: 10em;
+    width: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.icon{
+    height: 5em;
+
+}
+
+.list{
+    font-size: 1.5rem;
+    text-align: left;
+}
+.list > table{
+    width: 100%;
+    margin-right: auto;
+}
+
+th{
+    padding: 1em 0;
+}
+
+td{
+    padding: .5em 0;
+}
+
+.spacedvertsm{
+    margin: 1em 0;
+}
+
+.spacedvertmd{
+    margin: 2em 0;
+}
+
+.spacedvertbig{
+    margin: 4em 0;
+}

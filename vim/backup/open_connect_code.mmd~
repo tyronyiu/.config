@@ -1,0 +1,13 @@
+graph TD
+A(open app)-->B[/swipe up control layer/]
+B-->C[/swipe control layer away/]
+C-->D['my codes' row made visible]
+D-->E{browse codes <br>by horizontally swiping through them}
+E-->F[/tap on code of choice/]
+F-->G['connect code' changes <br> to desired choice]
+G-->J[in case of mistake]
+J-->E
+G-->H[/swipe down control layer/]
+H-->I(changed 'connect code' <br> ready to be scanned)
+classDef def fill: #000, stroke: #709, color: #fff, path: #fff, edge: #fff
+class 0,A,B1,C,D,E,F,G,H,I,J,K,L,M,N def

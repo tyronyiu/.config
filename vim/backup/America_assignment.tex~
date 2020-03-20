@@ -1,0 +1,373 @@
+% Document Setup
+% ---------------
+\documentclass[12pt]{article}
+\usepackage{cite}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[hidelinks]{hyperref} %Makes Table of Contents clickable
+
+\begin{document}
+% Document Configuration
+% ----------------------
+\title{The rise of China}
+\author{Ty Yiu}
+\date{2019-12-13}
+\maketitle
+\tableofcontents
+\pagebreak
+
+\section*{preface}
+\addcontentsline{toc}{section}{preface}
+
+\textit{"China is a sleeping lion, and when she awakes, the world will
+shake"} - \cite{ruddKevin:1}.
+
+
+Personally, I agree with most of realisms main principles, as well as support
+liberalism in politics. 
+In my view, china is a very 'sleepy' lion, that would bite if poked,
+but would rather mind its own business. American led liberalism may be coming to
+a seeming end, though hopefully, it's core values will transcend into the coming
+normative world order with a bi- or preferably a multi-polar ruled order,
+cascading patterns of liberal principles from system structure down to unit
+level. 
+    
+\section*{abstract}
+\addcontentsline{toc}{section}{abstract}
+Many political scientists believe, that modern American liberalism seems to
+lose in presence \cite{lse:americanDecline} \cite{lse:americanDecline}. However,
+others believe, that American reign will not come to an end in the near future.
+The answer is as always, hidden away by time, but extrapolations of behaviours
+can be made to reach predictions about likely outcomes \cite{wohlforth:singlePower}.
+
+In the twenty first century no relationship between countries is and will be as
+important as the one between the global greatest power, the united states and
+china, the world's rising power. Whether they will converge and clash or align
+and prosper in a dual control world hegemony, depends upon interpretation of
+each other's action and whether or not an anarchistic state of 'self-help'
+would be maintained between the two \cite{schwellerRandall:1}. 
+
+\pagebreak
+
+\section{Declining American liberal hegemony}
+
+The liberal hegemonic U.S. led world order has been recognised to have been
+fading in influence, while china's rapid growth and development challenges its
+global domination. Whether or not a circumstance of too great friction will
+result in conflict or in peaceful coexistence depends upon the choice of
+implementation of core values into politics. Differences in interpretation of
+the preferred economic system are existent, but less drastic than in how both
+powers perceive the other's political views of an aspired global order. Thus, it
+can be said, that the current path is on of collision for if one or both powers
+don't adapt political views or policies.
+
+The term \textit{'liberalism'} diverges in different parts of the world, due to
+the interpretation of the central objective of liberal principles. In Europe,
+especially northern countries including the Scandinavians, \textit{liberalism}
+is rather associated with a responsibility carried by the government to care for
+its nation, thus it's countries' outstanding social welfare systems. Nevertheless
+disparities between exact national interpretations of liberalism or intended
+implementation, a few integral values are being affirmed, as the principle of
+equality, freedom, democratic procedures \& international cooperation. The
+integration of these principles is ground of mentioned difference, as even China
+is a condoner of liberalism in trade economics and policies
+\cite{schwellerRandall:1}.
+
+When comparing the political systems employed by the united states and china
+they follow mentioned liberal democracy and authoritarian regime, respectively.
+This is also where much of the potential for friction resides, as the 'shadow of
+the future' \cite{powell1999shadow} \cite{waltz:structural}.
+
+
+\section{Clash, Cooperate, Subordinate?}
+%=================================
+
+As recently prominently in the news, the ongoing trade war could most
+definitively be considered competition or an economic conflict. If not in
+accord, the result of past occurrences of competition interpreted by the United
+States, is at least a potential threat to its position in the international
+community. Thus, the question of whether or not China can be a competitor to the
+United States is surely to be agreed with. That induction of thought can be
+interpreted from most American foreign affairs political scientists' thoughts on
+China \cite{graham:war} \cite{graham:thucydides} \cite{economist:tradewar}.
+Besides that, China has always been a country of mystery for the United States.
+Who sees China mostly as a potential competitor, sometimes even adversary.
+Friction has often existed between the two countries. Ever since Xi Jinping, the
+Chinese Communist Party's secretary and de facto leader of the people's republic
+of china announced his plan of ‘the great renewal of the Chinese nation’ and
+'the Chinese Dream' \cite{xiaoyu:controversialIdentity}, the United States'
+interpretation of the future relationship with China withered slightly away
+\cite{hamati:values}.
+
+A general consensus among politicians seems to be, that the realist's argument
+is one of nations rising and falling in a cyclical recurrence through the
+process of political actors balancing each other in an anarchistic environment
+referred to as 'balances of power/order' \cite{robinson:cycles}.
+
+Such a process implies the existence of competition and/or conflict between
+nations objectified by the concept of self-perseverance, examined by K. Waltz as
+'state of self-help'. Both can be easily classified as posing a threat to
+another country and inducing fear leading to alterations in behaviour.
+As the realists Waltz, Powell and Keohane agree upon, "states’ perennial
+uncertainty about their fates presses governments to prefer relative over
+absolute gains" \cite{waltz:structural}.
+
+Robert Powell describes three options for a state in a state fearing threat:
+"(1) \textit{it can reallocate resources already under its control;} (2)
+\textit{it can try to defuse the threat through bargaining and compromise;} (3)
+\textit{it can try to draw on the resources of other states by allying with
+them}" \cite{powell1999shadow}.
+
+Waltz responses to criticism on his \textit{"Theory of international
+politics"} by \textit{Richard K. Ashley} and \textit{John G. Ruggie},
+clarifying, that he sees the structure of the global system as defining the
+behaviour of its units, while explanations for behaviour stay opaque due to
+several levels and thus origins of possible, causes \cite{waltz:reply}.
+
+The behaviour defining structure could be modern American liberalism, democratic
+republican right wing liberalism or autocratic socialism or any to be rising
+socio-political order, though will be sought to be maintained by the regime
+employing the system. Would it be objectified to change behaviour, structural
+changes have to be taken to shift the system.
+
+Systems in the state of self-help can be transformed if the system's principles
+shift away from anarchistic to a hierarchic form. Therefore, describing the rise
+and fall of national powers as a cycle of anarchy and hierarchy, brought arise
+by the "shadow of the future" \cite{powell1999shadow} \cite{waltz:structural},
+enabling a circumstance of anarchistic self-perseverance in the first place.
+Hence, The rise of China and the United States' perception of such as a threat to
+its global positioning. Thus it could/should cause the hierarchic system to
+become more anarchistic, resulting in the United States lesser prioritising
+ideological preferences or maximisation of internal gains.
+
+\begin{quotation}
+\textit{"Thucydide's Trap, the dangerous dynamic of rising powers threatening to
+    displace ruling power"} \cite{thucydides:1}.
+\end{quotation}
+
+When competition arises between falling and rising powers liberals' and
+realists' thoughts differ on how states would handle such a situation
+\cite{powell:gains}. The liberal institutionalist's argument follows the thought
+of 'international institutions serving international interest'
+\cite{milward1999european}. Opposing, how \textit{A. Milward} states, that
+"realism reveals what liberal institutionalist's 'theory' obscures"
+\cite{milward1999european}, that states in circumstances of 'pressure of
+competition' \cite{waltzKenneth:2}, act rather in national interest. Furthermore,
+\textit{K. Waltz} goes as far as arguing that under such competitive pressures,
+the \textit{'self-help'} doctrine for anarchic systems provides legitimisation
+for such behaviour. Because, "state behaviour varies more with differences in
+power than in differences in ideology or governmental form" \cite{waltz:reply}.
+
+
+\subsection{Global system structure }
+%-----------------------------------
+The problem with structure is the inclusion and exclusion of criteria for
+defining such. This difficulty increases as relating two nation states of
+varying regime systems. The perception of the other, as in how states relate to
+another, is what \textit{K. Waltz} is arguing for in \textit{'A response to my
+critics'}, especially when considering how totalitarian autocratic and liberal
+democratic states relate to each other \cite{waltz:reply}. "Ruggie's belief is,
+that structure should contain a logic that accounts for its own transformation
+(see Durkheim's dynamic density)" \cite{waltz:reply}pp.328, and implies thus the
+difficulty of keeping these levels of units separate. 
+
+The global system doesn't expect the strong nations to ally, effectively
+increasing their power over others, and not having balances form, but rather
+creating, not a unipolar, but a few-led world hegemony. Rather, these states
+would ally with the 'weaker' unit in the system, because of the relative threat
+wedge between 'strength' in the system \cite{axelrod2009evolution}. After all, it
+is self-perseverance, the maintenance of position in the system, that drives
+nations in the, through a realism's prism viewed, global system. "Whether
+political actors balance each other or climb on the bandwagon depends on the
+system's structure" \cite{waltz:p126Neo}. Realism provides is still majorly seen
+as the defining theory for international politics \cite{waltzKenneth:2}.
+
+\begin{quotation}
+Every time peace breaks out, people pop up to proclaim that realism is dead.
+    That is another way of saying that international politics has been
+    transformed. The world, however, has not been transformed; the structure of
+    international politics has simply been remade" \cite{waltz:structural},
+    pp.39.
+\end{quotation}
+
+In a self-help system states only seek profit and power after assurance of
+survival. Similarly to Maslow's 'theorem of hierarchical needs'
+\cite{maslow:motivation}. Thus, states won't allocate as much effort and
+resources to promoting its own prosperity and maximisation of gain, but rather
+employ measures of sustaining and maintaining its position in the global system.
+These disparities within global positioning of units could thus result in
+containment methods and those of protectionism.
+
+American modern liberalism is not the same anymore under Trump than under the
+Obama or Reagan administration and foreign policies are wildly different. In a
+recently held debate between John Mearsheimer and Xuetong Yan "His personal
+belief and way of conduct might be inherently contradictory to the U.S.'
+overarching foreign policy principles" \cite{xuetongYan:1}. Mearsheimer said,
+that "it is very hard to categorise him (trump) as following any particular
+theory" \cite{mearsheimerJohnInt:1}. Thus, it seems like a change in structure
+of system and thus behaviour, giving explanation to differences in former and
+current handling of China, including foreign policy. The question arises
+naturally, to what structure will Trump's impact form the American system and
+thus impact on the global community. 
+
+In circumstances of employment of self-help strategies, as is the case with the
+united states and china currently, this could result in utilising such
+disproportionate gain to implement policies to intentionally damage or hinder
+the other. A good example of such would be the ongoing trade war between the two
+nations \cite{economist:tradewar}. Imposing, chasing and increasing tariffs on
+imported goods. Notably, that national security suspicions of Chinese networking
+electronics parts being used in U.S.  infrastructure, and other reasons have
+toughened the situation. One of which is the fact, that the effect of Chinese
+import tariffs impacts Trump's voter base area the most
+\cite{economist:tradewar}.
+
+Also, the issue regarding China's foul play in technological intellectual
+property or having a trade surplus with the United States has to be disregarded.
+Assuming, that those issues were squared away and the situation less security
+related, the possibility of mutual benefit returns to the table.
+This though will pose the question of, "when faced with the possibility of
+cooperating for mutual gain, states that feel insecure must ask how the gain
+will be divided. They are compelled to ask not 'Will both of us gain?', but 'Who
+will gain more?'" \cite{waltz:anarchy} pp.101.
+
+Considering, that the shadow of the future will hinder a 'blue-sky' outlook, the
+United States would continue seeing China as a prospect for threat or
+competition and thus conflict. They have always done so, ever since founded, the
+Americans have wondered whether their reign will soon be of counted days or
+pivot to its downfall. 
+
+When in fact, "Robert Axelrod and Robert Keohane believe that World War I might
+have been averted if certain states had been able to see how long the future’s
+shadow" \cite{waltz:structural}.
+
+Kenneth Waltz describes it well, stating, that "the contours of the future’s
+shadow look different in hierarchic and anarchic systems. The shadow may
+facilitate cooperation in the former; it works against it in the latter"
+\cite{waltzKenneth:2} \cite{waltz:reply}.
+
+As also been discussed, but can be commonly seen, it is the case, that 
+"while liberal societies may not war with one another, liberals are quite
+aggressive towards their non-liberal opponents" \cite{doyleMichael:1}.
+
+Furthermore to liberals being more assertive on non-liberal regimes, Robert
+Gilpin argues, that
+
+
+\begin{quote}
+liberals and Marxists cannot easily accept the doctrine of intellectual peaceful
+    coexistence \cite{gilpinRobert:1}.
+\end{quote} 
+
+
+On the other hand, China's opinion of American led administration is undesirable
+and not consequent. American involvement in Chinese internal affairs have been
+recorded multiple times \cite{Lampton:americaChina}. Most (Americans) advocate the
+involvement in China \cite{warren:americaChina}, and China obviously doesn't
+like that. The American involvement is central point of collision for China,
+trade war here or there, direct political involvement is different. Not only
+different for China, but also for the United States' typical regime's behaviour.
+As Robert Tucker describes, the Americans haven't only been lately been engaging
+in involvement in other countries, but also outside of their by themselves set rules. 
+This again indicates the anarchistic / hierarchic cycle in system structure as a
+origin of behaviour changes, caused by fear of potential threats.
+
+
+\begin{quotation}
+"According to a senior official, the Reagan administration 'debated whether we
+    had the right to dictate the form of another country’s government. The
+    bottom line was yes, that some rights are more fundamental than the right of
+    nations to non-intervention... We don’t have the right to subvert a
+    democracy but we do have the right against an undemocratic one"
+    \cite{tuckerRobert:1}.
+\end{quotation}
+
+
+Considering that the United States would disregard their policies and values in
+the face of self-help, it underlines the thought, that it is unlikely for the
+United States to simply have a bipartisan superpower order. Similarly, exactly
+these kinds of fear induced self-interest, rule abandoning behaviour is what
+China cannot compromise to be led by. 
+
+Furthermore, China can probably continue as it does and slowly diminish American
+influence, as subordinating to a American led order odes not seem like a viable
+option for China at all, especially considering the CPC's recently announced
+plans on global positioning. Although, firmly assuring, that there should be
+"nothing to fear" \cite{scmp:1}. Their calmness disregarding the trade war,
+makes it seem as though the Chinese are in for the long term. Planning further
+ahead than the Americans and not engaging in self-help measures too much, is
+indicating a shadow of the future, further away. Nevertheless China's actual
+plans, as opaque their 'transparent' government is in comparison to multilateral
+institutionalism, someone's verbal assurance has never been grounds to trust on
+the political stage.
+
+Very importantly to note here is, the difference between American globalisation
+and Chinese's perception of globalisation. The Chinese subvention system is
+heavily criticised but part of their globalisation strategy, formed by their
+autocratic, planned economy approach. The amount of state operations is greater
+than in the United States and it could be argued for a legitimacy for and
+against.
+
+The only real outlook for no conflict seems thereby to be, that the United
+States changes its perception of China as a non-threat, which won't be the case.
+Hence, as the behaviour is seemingly unchangeable, even under a already
+different American system structure held together by Trump, the system needs to
+be restructured. Though, remembering, that "It does not break the essential
+continuity of international politics" \cite{waltz:structural}, pp.39.
+
+William Wohlforth argues that any development must occur, it will be probably be
+longer rather than shorter in time. "Theory cannot say when 'tomorrow' will come
+because international political theory deals with the pressures of structure on
+states and not with how states will respond to the pressures"
+\cite{wohlforthWilliam:1}.
+
+\subsection{Re-structuring the global order}
+
+"Robert Axelrod has shown that the 'tit-for-tat' tactic, and no other, maximizes
+collective gain over time" \cite{waltz:structural}. Which plays well into
+Trump's handbook and the ambitions the Chinese have regarding trade and
+political strategy in general.
+
+The "U.S. paid to be the western hemisphere hegemon. For china, the best
+possible solution would be to become the eastern hemisphere regional hegemon"
+\cite{mearsheimerJohnInt:1}. Therefore alleviating itself to a bipartisan
+hegemonic world order with the United States.
+
+Thus, "states could combine their efforts cheerfully and work to maximize
+collective gain without worrying about how each might fare in comparison to
+others" \cite{keohane1986neorealism}. 
+
+Particular and bilateral partnerships need to be formed, this is harder where
+the countries' political and economic assumptions differ. Multilateral
+international institutionalism's integration into the world's systems seems
+central to a hierarchic structure, for which is longed for. Chinese and
+Americans have to compromise and find a middle ground on political issues, as
+their deeply intertwined economies and economic similarities hold them together.
+
+\section{Conclusion}
+
+After careful consideration, the conclusion arose, that the rise of China cannot
+be managed within the existing American led world order and must result in
+competition and conflict. Either or both states have to adapt their political
+system structure to accommodate compromises with the other. 
+
+The fear of the 'shadow of the future' and the following shift from hierarchy to
+anarchy, caused by in self-helping, intended rules disregarding states,
+is the origin of power balancing and suppression. 
+
+The constant changes in the fabric of systematic structure lets powers rise and
+fall, though under the assumption of 'self-help'. Ever since the cold war, the
+global hierarchy has been American led, though said hierarchy seems to crumble
+and tumble into anarchy. Though, rivaling it is the rise of China, caused by the
+disproportionate allocation of gains and resources, by the United States
+themselves. Integration into the WTO, outsourcing manufacturing and waste
+disposable in massive magnitudes, America is the driving cause of Chinese rise. 
+
+China will not subordinate to American rule and neither the other way around.
+Hence, for the better of both and all, a middle ground shall be reached to
+disengage a fear loaded situation.
+
+\pagebreak
+\bibliography{America_assignment}{}
+\bibliographystyle{apalike}
+
+\end{document}

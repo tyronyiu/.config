@@ -1,0 +1,9 @@
+#!/bin/bash
+
+usrname = $1
+osascript -e' 
+set n to \"$usrname\"
+tell application "Contacts"
+  set r to value of phone 1 of (person 1 whose name = n) whose label = "mobile"
+end tell
+return targetContact'

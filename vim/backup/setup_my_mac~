@@ -1,0 +1,51 @@
+# TO ADD:
+#-------------------------------------------
+# - dotfiles
+
+brews=(
+wget
+git
+"vim --with-override-system-vi"
+tmux
+pandoc
+yabai
+skhd
+python3
+)
+
+# Install Homebrew
+getBrew
+
+# Install packages/programs
+brew install zsh zsh-completions
+chsh -s /bin/zsh
+sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+pip3 install --user pywal
+export PATH="${PATH}:${HOME}/.local/bin/"
+
+
+
+# FUNCTIONS
+#------------------------------
+
+function getBrew {
+if test ! "$(command -v brew)"; then
+  prompt "Install Homebrew"
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+  if [[ -z "${CI}" ]]; then
+    prompt "Update Homebrew"
+    brew update
+    brew upgrade
+    # Test Brew installation for success.
+    brew doctor
+  fi
+fi
+}
+
+function prompt {
+  if [[ -z "${CI}" ]]; then
+    read -p "Hit Enter to $1 ..."
+  fi
+}

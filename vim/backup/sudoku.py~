@@ -1,0 +1,372 @@
+from tkinter import *
+fields = []
+Labels = []
+cursor = 40
+UserName = ""
+Level = 1
+started = False
+Time = 0
+
+
+def reset():
+    global fields
+    global Labels
+    global cursor
+    global UserName
+    global Level
+    global started
+    global Time
+    fields = []
+    Labels = []
+    cursor = 40
+    UserName = ""
+    Level = 1
+    started = False
+    Time = 0
+    boot()
+
+
+def showScores():
+    global started
+    global UserName
+    global Time
+    scoresWindow = Tk()
+    scoresWindow.attributes("-topmost", True)
+    scoresWindow.title("SCORES")
+    scoresWindow.minsize(400, 600)
+    scoresWindow.resizable(False,False)
+    scoresWindow.grid_columnconfigure(3, weight=1)
+    windowWidth = scoresWindow.winfo_reqwidth()
+    windowHeight = scoresWindow.winfo_reqheight()
+    positionRight = int(scoresWindow.winfo_screenwidth()/2 - windowWidth/4)
+    positionDown = int(scoresWindow.winfo_screenheight()/4 - windowHeight/2)
+    scoresWindow.geometry("+{}+{}".format(positionRight, positionDown))
+    userNameLabel = Label(scoresWindow,font='System 24 bold', padx=2, pady=2, text="NAME", fg="#14BD5D" )
+    userNameLabel.grid(row=0,column=0)
+    levelLabel = Label(scoresWindow,font='System 24 bold', padx=2, pady=2, text="LEVEL", fg="#14BD5D" )
+    levelLabel.grid(row=0,column=1)
+    timeLabel = Label(scoresWindow,font='System 24 bold', padx=2, pady=2, text="TIME", fg="#14BD5D" )
+    timeLabel.grid(row=0,column=2)
+    readScores = []
+    with open('scores.txt', 'r') as f:
+        lines = f.readlines()
+    readScores = [(e.strip()).split(',') for e in lines]
+    row = 1
+    col = 0
+    for x in readScores:
+        for y in x:
+            scoresLabel = Label(scoresWindow,font='System 24 bold', padx=2, pady=2, text=y, fg="#14BD5D" )
+            scoresLabel.grid(row=row,column=col)
+            col += 1
+        col = 0
+        row += 1
+    quitButton = Label(scoresWindow, text="CLOSE WINDOW", font='System 24 bold', justify='center', padx=20, pady=20, fg="#FF185F",borderwidth=2, relief="groove")
+    quitButton.bind("<Button-1>", lambda event: scoresWindow.destroy())
+    quitButton.grid(columnspan=3)
+    scoresWindow.mainloop()
+
+
+########___DrawGrid___#########
+def drawGrid():
+    global started
+    def quitGame(w,x,y):
+        w.destroy()
+        x.destroy()
+        reset()
+
+    def pauseGame(x):
+        global started
+        x.config(text="CONTINUE")
+        x.bind("<Button-1>", lambda event: continueGame(x))
+        started = False
+
+    def continueGame(x):
+        global started
+        started = True
+        x.config(text="PAUSE")
+        x.bind("<Button-1>", lambda event: pauseGame(x))
+
+    def status():
+        global UserName
+        statusWindow = Tk()
+        statusWindow.attributes("-topmost", True)
+        statusWindow.title("SUDOKU")
+        statusWindow.minsize(400, 600)
+        statusWindow.resizable(False,False)
+        windowWidth = statusWindow.winfo_reqwidth()
+        windowHeight = statusWindow.winfo_reqheight()
+        positionRight = int(statusWindow.winfo_screenwidth()/6 - windowWidth/2)
+        positionDown = int(statusWindow.winfo_screenheight()/4 - windowHeight/2)
+        statusWindow.geometry("+{}+{}".format(positionRight, positionDown))
+        UserNameLabel = Label(statusWindow,font='System 24 bold', padx=20, pady=20, text=UserName, fg="#14BD5D" )
+        UserNameLabel.pack(expand=1,fill=BOTH)
+        TimeLabel = Label(statusWindow,font='System 24 bold', padx=20, pady=20, text="x", fg="#14BD5D" )
+        TimeLabel.pack(expand=1, fill= BOTH)
+        completenessLabel = Label(statusWindow,font='System 24 bold', padx=20, pady=20, text="UNCOMPLETED", fg="#FF185F" )
+        completenessLabel.pack(expand=1, fill= BOTH)
+        pauseButton = Label(statusWindow, text="PAUSE", font='System 24 bold', justify='center', padx=20, pady=20, fg="#3B85E1",borderwidth=2, relief="groove")
+        pauseButton.bind("<Button-1>", lambda event: pauseGame(pauseButton))
+        pauseButton.pack(expand=1,fill=BOTH)
+        verifyButton = Label(statusWindow, text="VERIFY RESULTS", font='System 24 bold', justify='center', padx=20, pady=20, fg="#14BD5D",borderwidth=2, relief="groove")
+        verifyButton.bind("<Button-1>", lambda event: verify(completenessLabel, pauseButton, verifyButton))
+        verifyButton.pack(expand=1,fill=BOTH)
+        instructionsButton = Label(statusWindow, text="HOW TO PLAY", font='System 24 bold', justify='center', padx=20, pady=20, fg="#3255FF",borderwidth=2, relief="groove")
+        instructionsButton.bind("<Button-1>", lambda event: showHowToPlay())
+        instructionsButton.pack(expand=1,fill=BOTH)
+        quitButton = Label(statusWindow, text="QUIT", font='System 24 bold', justify='center', padx=20, pady=20, fg="#FF185F",borderwidth=2, relief="groove")
+        quitButton.bind("<Button-1>", lambda event: quitGame(statusWindow,boardWindow,quitButton))
+        quitButton.pack(expand=1,fill=BOTH)
+        def Timer():
+            global Time
+            global started
+            if started == True:
+                Time += 1
+                TimeLabel.configure(text=Time)
+                statusWindow.after(1000, Timer)
+            else:
+                statusWindow.after(1000, Timer)
+        Timer()
+    global fields
+    global Labels
+    global cursor
+    status()
+    boardWindow = Tk()
+    boardWindow.attributes("-topmost", True)
+    boardWindow.title("SUDOKU")
+    boardWindow.minsize(600, 600)
+    boardWindow.resizable(False,False)
+    windowWidth = boardWindow.winfo_reqwidth()
+    windowHeight = boardWindow.winfo_reqheight()
+    positionRight = int(boardWindow.winfo_screenwidth()/2 - windowWidth/2)
+    positionDown = int(boardWindow.winfo_screenheight()/4 - windowHeight/2)
+    boardWindow.geometry("+{}+{}".format(positionRight, positionDown))
+    boardWindow.bind("<Left>",lambda event: handleLeft())
+    boardWindow.bind("<Right>",lambda event: handleRight())
+    boardWindow.bind("<Up>",lambda event: handleUp())
+    boardWindow.bind("<Down>",lambda event: handleDown())
+    boardWindow.after(1001, lambda: boardWindow.focus_force())
+    for i in range(9):
+        i+=1
+        boardWindow.bind(str(i), handleNum)
+    main = Frame(boardWindow)
+    main.configure(bg="black")
+    main.pack(expand=1,fill=BOTH)
+    col = 0
+    row = 0
+    for x in range(len(fields)):
+        if col == 9:
+            col = 0
+            row += 1
+        Square = Label(main, fg="black",font='System 24 bold', padx=20, pady=15, text=fields[x])
+        if col in [2,5]:
+            if row not in [2,5]:
+                Square.grid(row=row, column=col,padx=(2,5),pady=2)
+                Labels.append(Square)
+            if row in [2,5]:
+                Square.grid(row=row,column=col,padx=2,pady=(2,5))
+                Labels.append(Square)
+
+        if col not in [2,5]:
+            Square.grid(row=row,column=col,padx=2,pady=2)
+            Labels.append(Square)
+        col +=1
+    Labels[cursor].configure(bg="#2514BD", fg="#ffffff")
+    boardWindow.mainloop()
+
+
+#######____MovementHandlers___###########
+def handleLeft():
+    global Labels
+    global cursor
+    if cursor > 0:
+        for x in Labels:
+            x.configure(bg="#ffffff",fg="black")
+        cursor -= 1
+        Labels[cursor].configure(bg="#2514BD", fg="#ffffff")
+
+def handleRight():
+    global Labels
+    global cursor
+    if cursor != 80:
+        for x in Labels:
+            x.configure(bg="#ffffff",fg="black")
+        cursor += 1
+        Labels[cursor].configure(bg="#2514BD", fg="#ffffff")
+
+def handleDown():
+    global Labels
+    global cursor
+    if cursor < 72:
+        for x in Labels:
+            x.configure(bg="#ffffff",fg="black")
+        cursor += 9
+        Labels[cursor].configure(bg="#2514BD", fg="#ffffff")
+
+def handleUp():
+    global Labels
+    global cursor
+    if cursor > 8:
+        for x in Labels:
+            x.configure(bg="#ffffff",fg="black")
+        cursor -= 9
+        Labels[cursor].configure(bg="#2514BD", fg="#ffffff")
+
+def handleNum(event):
+    global Labels
+    global cursor
+    fields[cursor] = int(event.char)
+    Labels[cursor].configure(text=event.char)
+
+
+################_____INIT_____#######################
+def init():
+    import linecache
+    import re
+    global fields
+    global Level
+    fields = linecache.getline('boards.txt', int(Level)).replace('\n','').split(',')
+
+
+################___verify___#################
+def verify(z,labelY,labelX):
+    global fields
+    global UserName
+    global Level
+    global Time
+    global started
+    rows =[]
+    cols = []
+    for x in range(9):
+        rows.append(fields[(x*9):((x+1)*9)])
+    hammingweightsRow = []
+    tmpWeight = []
+    for x in rows:
+        for y in x:
+            tmpWeight.append(((2 ** (int(y)-1))))
+        hammingweightsRow.append(sum(tmpWeight))
+        tmpWeight.clear()
+    for x in range(9):
+        cols.append(fields[(x*9):((x+1)*9)])
+    hammingweightsCol = []
+    tmpWeight1 = []
+    for x in cols:
+        for y in x:
+            tmpWeight1.append(((2 ** (int(y)-1))))
+        hammingweightsCol.append(sum(tmpWeight1))
+        tmpWeight1.clear()
+    if all(item == 511 for item in hammingweightsRow) and all(item1 == 511 for item1 in hammingweightsCol):
+        scoresFile = open("scores.txt","a+")
+        scoresFile.write(str((UserName).replace(" ", "_")) + ',' + str(Level) + ',' + str(Time) + '\n')
+        scoresFile.close()
+        labelX.unbind("<Button-1>")
+        labelX.configure(fg="#5B5E64")
+        labelY.unbind("<Button-1>")
+        labelY.configure(fg="#5B5E64")
+        z.configure(text="COMPLETED", fg="#14BD5D")
+        started= False
+        showScores()
+    else:
+        z.configure(text="UNCOMPLETED", fg="#FF185F")
+
+
+##########___INITPROFILE___###########
+def initProfile(previousWindow):
+    previousWindow.destroy()
+    def getInput():
+        global Level
+        global UserName
+        UserName = E1.get()
+        Level = str(int(E2.get()) + 1)
+        start(SetupWindow)
+    SetupWindow = Tk()
+    SetupWindow.attributes("-topmost", True)
+    SetupWindow.title("SUDOKU")
+    SetupWindow.minsize(600, 600)
+    windowWidth = SetupWindow.winfo_reqwidth()
+    windowHeight = SetupWindow.winfo_reqheight()
+    positionRight = int(SetupWindow.winfo_screenwidth()/6 - windowWidth/2)
+    positionDown = int(SetupWindow.winfo_screenheight()/4 - windowHeight/2)
+    SetupWindow.geometry("+{}+{}".format(positionRight, positionDown))
+    form1 = Frame(SetupWindow)
+    form1.configure()
+    form1.pack(side="top",expand=1,fill=BOTH)
+    form2 = Frame(SetupWindow)
+    form2.configure()
+    form2.pack(side="top",expand=1,fill=BOTH)
+    L1 = Label(form1, text="User Name: ", font='System 24 bold', justify='center', padx=20, pady=20, fg="#14BD5D")
+    L1.pack(side="top",expand=1,fill=BOTH)
+    E1 = Entry(form1, bd =5)
+    E1.pack(side="top",expand=1,fill=BOTH,padx=20, pady=20)
+    L2 = Label(form2, text="Level (1-10): ", font='System 24 bold', justify='center', padx=20, pady=20, fg="#14BD5D")
+    L2.pack(side="top",expand=1,fill=BOTH)
+    E2 = Entry(form2, bd =5)
+    E2.bind("<FocusOut>",getInput)
+    E2.pack(side="top",expand=1,fill=BOTH,padx=20, pady=20)
+    startButton = Label(SetupWindow, text="START", font='System 24 bold', justify='center', padx=20, pady=20, fg="#14BD5D",borderwidth=2, relief="groove")
+    startButton.bind("<Button-1>", lambda event: getInput())
+    startButton.pack(expand=1,fill=BOTH)
+    SetupWindow.mainloop()
+
+
+###############___START___################
+def start(previousWindow):
+    global fields
+    global started
+    previousWindow.destroy()
+    started = True
+    init()
+    drawGrid()
+
+
+#############___ShowHowToPlay___###############
+def showHowToPlay():
+    howToPlayWindow = Tk()
+    howToPlayWindow.attributes("-topmost", True)
+    howToPlayWindow.title("HOW TO PLAY")
+    howToPlayWindow.minsize(600, 600)
+    windowWidth = howToPlayWindow.winfo_reqwidth()
+    windowHeight = howToPlayWindow.winfo_reqheight()
+    positionRight = int(howToPlayWindow.winfo_screenwidth()/1.5 - windowWidth/2)
+    positionDown = int(howToPlayWindow.winfo_screenheight()/4 - windowHeight/2)
+    howToPlayWindow.geometry("+{}+{}".format(positionRight, positionDown))
+    instructionsLabel = Label(howToPlayWindow, text="NAVIGATE THE SUDOKU GRID USING THE ARROW KEYS. \n\n CHANGE VALUES USING NUMPAD. \n\n FURHTER HELP IN README", font='System 18', justify='center', padx=20, pady=20, fg="#040106")
+    instructionsLabel.pack(expand=1)
+    closeWindowButton = Label(howToPlayWindow, text="CLOSE WINDOW", font='System 24 bold', justify='center', padx=20, pady=20, fg="#FF185F",borderwidth=2, relief="groove")
+    closeWindowButton.bind("<Button-1>", lambda event: howToPlayWindow.destroy())
+    closeWindowButton.pack(expand=1,fill=BOTH)
+
+
+##############___BOOT___#################
+def boot():
+    global started
+    menuWindow = Tk()
+    menuWindow.attributes("-topmost", True)
+    menuWindow.title("SUDOKU")
+    menuWindow.minsize(600, 600)
+    windowWidth = menuWindow.winfo_reqwidth()
+    windowHeight = menuWindow.winfo_reqheight()
+    positionRight = int(menuWindow.winfo_screenwidth()/6 - windowWidth/2)
+    positionDown = int(menuWindow.winfo_screenheight()/4 - windowHeight/2)
+    menuWindow.geometry("+{}+{}".format(positionRight, positionDown))
+    main = Frame(menuWindow)
+    main.configure()
+    main.pack(expand=1,fill=BOTH)
+    if started == False:
+        startButton = Label(main, text="START", font='System 24 bold', justify='center', padx=20, pady=20, fg="#14BD5D",borderwidth=2, relief="groove")
+        startButton.bind("<Button-1>", lambda event: initProfile(menuWindow))
+        startButton.pack(expand=1,fill=BOTH)
+    instructionsButton = Label(main, text="HOW TO PLAY", font='System 24 bold', justify='center', padx=20, pady=20, fg="#3255FF",borderwidth=2, relief="groove")
+    instructionsButton.bind("<Button-1>", lambda event: showHowToPlay())
+    instructionsButton.pack(expand=1,fill=BOTH)
+    showScoresButton = Label(main, text="SCOREBOARD", font='System 24 bold', justify='center', padx=20, pady=20, fg="#3255FF",borderwidth=2, relief="groove")
+    showScoresButton.bind("<Button-1>", lambda event: showScores())
+    showScoresButton.pack(expand=1,fill=BOTH)
+    quitButton = Label(main, text="QUIT", font='System 24 bold', justify='center', padx=20, pady=20, fg="#FF185F",borderwidth=2, relief="groove")
+    quitButton.bind("<Button-1>", quit)
+    quitButton.pack(expand=1,fill=BOTH)
+    checkButton = Label(main, text="CHECK RESULTS", font='System 24 bold', justify='center', padx=20, pady=20, fg="black",borderwidth=2, relief="groove")
+    checkButton.bind("<Button-1>", verify)
+    menuWindow.mainloop()
+
+
+boot()

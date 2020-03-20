@@ -1,0 +1,100 @@
+import React from 'react';
+import '../App.css';
+import MainCard from '../components/MainCard.js';
+import WorkCard from '../components/WorkCard.js';
+import Header from '../components/Header.js';
+import rotorImg from '../rotor.png';
+import renderVid from '../out.mp4';
+import underConstructionSvg from '../undraw_work_in_progress_uhmv.svg';
+import moonSvg from '../undraw_to_the_moon_v1mv-3.svg';
+import Footer from '../components/Footer.js';
+import Analytics from '../undraw_Business_analytics_64el.svg';
+import InnovationSvg from '../undraw_innovative_b409.svg';
+
+function Home() {
+  return (
+    <div className="Home">
+      <Header />
+      <div className="banner">
+      <div>
+      <div className="intro"> 
+      <h1 className="topTitle">
+      {/*Control Module */}
+      Digital Solutions
+      </h1>
+      <hr className="ruler" />
+        <img className="bannerSvg" src={moonSvg} />
+      <div className="moduleDesc">
+      A little innovative service to elevate your digital utilisation effectiveness. <br /><br />
+      Connect tailored and specific digital actions to your existing business environment. <br /><br />
+      </div>
+      </div>
+
+      {/*
+          <div className="blackbox">
+          <div className="blackboxText">
+            The future of smart home automation <br /> accessed via the command module is coming soon!
+        </div>
+         </div>
+         */}
+
+      </div> 
+
+      {/*
+      <div className="CMContainer">
+      <div className="CM1">
+      CM-1
+      </div>
+      <img className="controlIcon" src={rotorImg} />
+      </div>
+*/}
+
+        </div>
+
+    <div className="section">
+      <img className="halfImage" src={Analytics} />
+      <div className="sectionTextContainer">
+      <div className="sectionTitle rightAligned">Outsource the digital burden</div>
+      <hr className="sectionRuler"/>
+    <div className="sectionParagraph rightAligned">Todays digital realm is complex and
+      ever-changing, often there is not enough time to implement new
+      technologies and stay up to date with digital development.
+      </div>
+      </div>
+    </div>
+        <div className="spacer"></div>
+    <div className="section">
+      <div className="sectionTextContainer">
+      <div className="sectionTitle">Experience a tailored & unique innovation subscription</div>
+      <hr className="sectionRuler"/>
+        <div className="sectionParagraph">Todays digital realm is complex and
+          ever-changing, often there is not enough time to implement new
+          technologies and stay up to date with digital development.
+          </div>
+      </div>
+      <img className="halfImage" src={InnovationSvg} />
+    </div>
+
+      {/*
+      <div className="TwoCardBox">
+      <MainCard />
+      <WorkCard />
+      </div>
+      */}
+      <div className="fullBleedContainer">
+      <div className="fullBleedTitle">sorry, this website is still under construction..</div>
+        <img className="fullBleedImage" src={underConstructionSvg} />
+      </div>
+      {/*
+         <div>
+            <video autoPlay loop playsInline className="renderVid">
+             <source src={renderVid} type="video/mp4" />
+            </video>
+         </div>
+         */}
+      <Footer />
+    </div>
+  );
+}
+
+export default Home;

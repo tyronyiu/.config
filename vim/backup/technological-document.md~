@@ -1,0 +1,105 @@
+**Adid**
+### Technological functionality
+The app "adid" is heavily reliant on two  only in combination useful
+technologies, the matrix barcode encoding algorithm and the vCard format.
+The internet engineering task force fully lists all parameters interpretable in
+the format, while qr code functionality is too often explained online. Data
+undergoes a transformation in between the two events of the user entering their
+info and the qr code being generated. Factors like compression loss are mostly
+irrelevant for functionality in this case of string transformation. Although,
+keeping the string as concise as possible before encoding said string into a
+matrix barcode. The widely supported V.3 of the vCard standard, can be used
+with no major problems with complexity of the qr matrix, although V.4 or similar
+formats are more suitable for offline uses due to smaller file sizes to encode.
+There are different versions of the vCard standard for different types of
+representation. A modern and very popular format usable with vCard is Json
+(RFC7095), while xml (RFC6351) and html versions also exist. These formats are
+very useful for all uses in the web and online.
+```
+Reference:
+The internet society (1998)
+IETF - vCard
+Netscape communications (1998) - vCard MIME directory profile memo
+```
+> the vCard data format for representing and
+   exchanging a variety of information about individuals and other entities
+   (e.g., formatted and structured name and delivery addresses, email address,
+   multiple telephone numbers, photograph, logo, audio clips, etc.).
+
+Example vCard:
+```
+ ["vcard",
+     [
+       ["version", {}, "text", "4.0"],
+       ["fn", {}, "text", "John Doe"],
+       ["n",
+         {},
+         "text",
+         ["Doe", "John", "", "", ["Dr.", "MBA."]]
+       ],
+       ["bday", {}, "date-and-or-time", "--02-03"],
+       ["anniversary",
+         {},
+         "date-and-or-time",
+         "1996-08-08T14:30:00-05:00"
+       ],
+       ["gender", {}, "text", "M"],
+       ["lang", { "pref": "1" }, "language-tag", "fr"],
+       ["lang", { "pref": "2" }, "language-tag", "en"],
+       ["org", { "type": "work" }, "text", "Google"],
+       ["adr",
+          { "type": "work" },
+          "text",
+          [
+           "Google Campus",
+           "Saint Jose",
+           "SJ",
+           "G1V 2M2",
+           "U.S."
+          ]
+       ],
+       ["tel",
+         { "type": ["work", "cell", "voice", "video", "text"] },
+         "uri",
+         "tel:+9876543211"
+       ],
+       ["tel",
+         { "type": ["personal", "cell", "voice", "video", "text"] },
+         "uri",
+         "tel:+1234567899"
+       ],
+       ["email",
+         { "type": "work" },
+         "text",
+         "John@Doe.com"
+       ],
+       ["url", { "type": "personal blog" }, "uri", "http://medium.com"]
+     ]
+   ]
+   ```
+Main functional sequences
+-------------------------
+```mermaid
+graph LR;
+A("user input") --> |transform to vCard format| B("qr code");
+```
+-------------------------
+```mermaid
+graph TD;
+A("user data") --> B("transform to strings and shorten")
+B --> C("subject strings to vCard format")
+C --> D("combine transformed strings and add constants")
+D --> E("encode assembled vCard json,csv,xml,hCard to qr code")
+```
+1. collect user information from UI input, store as few string or string
+   array/dictionary.
+2. transform all data points subject to the vCard format specifications.
+3. shorten, compress data or offload to client's apps to exchange minimum
+   possible amounts of data.
+4. use matrix barcode qr encoding and present visually in UI.
+
+In "adid", the user only enters information and all above steps are done by
+pressing the save button. As soon as that view dismisses to a higher in the
+hierarchy view, such could be a home view, the qr code is visually updated.
+This is subject to minimising updates while views are still presented and help
+in identifying or minimising the extent of errors occurring.

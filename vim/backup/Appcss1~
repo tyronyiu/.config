@@ -1,0 +1,723 @@
+.App {
+    background-color: #000000FF;
+}
+
+
+
+.App-header {
+  background-color: #2C2C2EFF;
+  min-height: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+/*  padding: 4.8rem;  48 ÷ $rembase 
+  margin-bottom: 2.4rem;*/
+    padding: 2rem; margin: 0;
+}
+
+
+.logoLink{
+    Font-family: 'Major Mono Display', monospace;
+}
+
+.banner {
+    width: auto;
+    height: 80vh;
+    background-color: #F2F2F7FF;
+    color: black;
+}
+
+.topTitle{
+    font-family: 'Roboto', sans-serif;
+    font-size: 7rem;
+}
+
+.moduleDesc{
+padding-left: 0.5rem;
+    font-family: 'Share Tech Mono', monospace;
+    color: #3C3C4399;
+}
+
+.TwoCardBox{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin: 0 1rem;
+    margin-bottom: 5rem;
+}
+
+
+
+.maincard {
+    min-width: 40%;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.60), 0 15px 12px rgba(0,0,0,0.42);
+    margin-top: 5rem;
+    height: auto;
+    background-color: #1C1C1EFF;
+    border-radius: 5px;
+    padding: 3rem;
+    color: white;
+}
+
+.cardTitle{
+    color: #000000FF;
+    background-color: #F2F2F7FF;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border-radius: 4px;
+}
+
+.cardSubtitle{
+    color: #1C1C1EFF;
+    margin-top: 1rem;
+    margin-left: .3rem;
+}
+
+.cardSectionTitle{
+    color: #FFFFFFFF;
+}
+
+.cardSectionText{
+    color: 	#EBEBF599;
+}
+
+.cardList{
+    padding: 2rem;
+    background-color: #2C2C2EFF;
+    height: fit-content;
+    margin: 2rem;
+    width: auto;
+}
+
+.cardListItems{
+    color: 	#EBEBF599;
+    padding-left: 2rem;
+}
+
+.intro{
+    padding: 3rem;
+}
+
+.ruler{
+    border-style: solid;
+    border-width: 0.05rem;
+    width: 60%;
+    margin-left: 0.5rem;
+}
+
+.smallRuler{
+    border-style: solid;
+    border-width: 0.05rem;
+    color: #787878;
+    width: 25%;
+    margin-left: 0.1rem;
+    margin-bottom: 1rem;
+}
+
+.blackbox{
+    background-color: black;
+    width: fit-content;
+    color: 	#EBEBF599;
+ /*   border-radius: 4px;*/
+box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
+    padding: .5rem;
+}
+
+
+.controlIcon{
+    position: absolute;
+    animation: spin 20s infinite linear;
+    filter: grayscale(01);
+    width: 50%;
+    margin-left: -25%;
+    left: 50%;
+    top: 75vh;
+}
+
+
+
+.CM1{
+
+    font-size: 3rem;
+    position: absolute;
+    width: 50%;
+    font-family: Major Mono Display;
+    text-align: center;
+/*    margin-left: -25%;
+    left: 50%;
+    top: 85vh;*/
+}
+
+
+
+
+
+
+
+
+
+/*RETINA LAPTOPS*/
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+
+    .banner{
+        height: 55vh;
+    }
+
+    .blackbox{
+        margin-top: 5rem;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.controlIcon{
+    float: right;
+    width: 25rem;
+    margin-left: 75%;
+    top: 20%;
+    position: absolute;
+    animation: spin 20s infinite linear;
+    filter: grayscale(01);
+    z-index:1;
+    left: 0;
+
+/*
+    position: absolute;
+    animation: spin 20s infinite linear;
+    filter: grayscale(01);
+    width: 50%;
+    margin-left: -25%;
+    left: 50%;
+    top: 75vh;
+    */
+
+
+}
+
+.CM1{
+    font-size: 6rem;
+    position: absolute;
+    width: 25rem;
+    font-family: Major Mono Display;
+    text-align: center;
+    float: right;
+    left: 75%;
+    top: 28.5vh;
+    z-index: 2;
+}
+
+.maincard {
+    min-width: 40rem;
+    max-width: 50rem;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.60), 0 15px 12px rgba(0,0,0,0.42);
+    margin-top: 5rem;
+    height: auto;
+    background-color: #1C1C1EFF;
+    border-radius: 5px;
+    padding: 3rem;
+    color: white;
+}
+
+.cardSectionBox{
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 -2rem;
+}
+
+.cardSection{
+    width: 40%;
+    flex: auto;
+    padding: 0 2rem;
+    color: white;
+}
+
+
+}
+
+
+/*IPAD PRO 9.7" LANDSCAPE*/
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+
+    .banner{
+        height: 55vh;
+    }
+
+    .blackbox{
+        margin-top: 5rem;
+    font-size: 2rem;
+    padding: 1rem;
+}
+.controlIcon{
+    float: right;
+    width: 20rem;
+    margin-left: 65%;
+    top: 20%;
+    position: absolute;
+    animation: spin 20s infinite linear;
+    filter: grayscale(01);
+    left: 0;
+}
+
+.CM1{
+    font-size: 4rem;
+    position: absolute;
+    width: 15rem;
+    font-family: Major Mono Display;
+    text-align: center;
+    /*float: right;*/
+    margin-left: 67.5%;
+    left: 0;
+    top: 26.5vh;
+}
+
+.maincard {
+    min-width: 40rem;
+    max-width: 50rem;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.60), 0 15px 12px rgba(0,0,0,0.42);
+    margin-top: 5rem;
+    height: auto;
+    background-color: #1C1C1EFF;
+    border-radius: 5px;
+    padding: 3rem;
+    color: white;
+}
+
+.cardSectionBox{
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 -2rem;
+}
+
+.cardSection{
+    width: 40%;
+    flex: auto;
+    padding: 0 2rem;
+}
+
+
+
+}
+/* IPHONE X Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+
+
+.App-header {
+  background-color: #2C2C2EFF;
+  min-height: 5vh;
+  max-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+    padding: 2rem; margin: 0;
+}
+
+.topTitle{
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+}
+
+.controlIcon{
+    position: absolute;
+    animation: spin 20s infinite linear;
+    filter: grayscale(01);
+    width: 25%;
+    left: 55%;
+    margin-left: 12.5%;
+    top: 60vh;
+}
+
+.CM1{
+    font-size: 4rem;
+    position: absolute;
+    width: 25%;
+    font-family: Major Mono Display;
+    text-align: center;
+    left: 55%;
+    margin-left: 12.5%;
+    top: 75vh;
+
+}
+
+.maincard {
+    min-width: 40rem;
+    max-width: 50rem;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.60), 0 15px 12px rgba(0,0,0,0.42);
+    margin-top: 5rem;
+    height: auto;
+    background-color: #1C1C1EFF;
+    border-radius: 5px;
+    padding: 3rem;
+    color: white;
+}
+
+.cardSectionBox{
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 -2rem;
+}
+
+.cardSection{
+    width: 40%;
+    flex: auto;
+    padding: 0 2rem;
+}
+
+}
+
+
+
+/*IPAD PRO 9.7" PORTRAIT*/
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+.banner{
+height: 40vh;
+}
+
+.controlIcon{
+    position: absolute;
+    animation: spin 20s infinite linear;
+    filter: grayscale(01);
+    width: 25%;
+    left: 25%;
+    margin-left: 12.5%;
+    top: 35vh;
+}
+
+.CM1{
+font-size: 5rem;
+    position: absolute;
+    width: 25%;
+    font-family: Major Mono Display;
+    text-align: center;
+    left: 25%;
+    margin-left: 12.5%;
+    top: 40vh;
+}
+.maincard {
+    min-width: 40%;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.60), 0 15px 12px rgba(0,0,0,0.42);
+    margin-top: 5rem;
+    height: auto;
+    background-color: #1C1C1EFF;
+    border-radius: 5px;
+    padding: 3rem;
+    color: white;
+}
+
+.cardSectionBox{
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 -2rem;
+}
+
+.cardSection{
+    width: 40%;
+    flex: auto;
+    padding: 0 2rem;
+}
+  }
+
+
+
+/*IPHONE X PORTRAIT*/
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 3)
+  { 
+
+    .topTitle{
+        font-size: 5rem;
+    }
+
+.controlIcon{
+    position: absolute;
+    animation: spin 20s infinite linear;
+    filter: grayscale(01);
+    width: 50%;
+    margin-left: -25%;
+    left: 50%;
+    top: 80%;
+}
+
+.CM1{
+
+    font-size: 3rem;
+    position: absolute;
+    width: 50%;
+    font-family: Major Mono Display;
+    text-align: center;
+    margin-left: -25%;
+    left: 50%;
+    top: 90%;
+}
+
+
+.ruler{
+border-width: 0.1rem;
+}
+
+.maincard {
+    min-width: 40%;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.60), 0 15px 12px rgba(0,0,0,0.42);
+    margin-top: 5rem;
+    height: auto;
+    background-color: #1C1C1EFF;
+    border-radius: 5px;
+    padding: 3rem;
+    color: white;
+}
+
+.cardSectionBox{
+
+}
+
+.cardList{
+width: auto;
+}
+
+.cardSection{
+}
+
+}
+
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 3)
+  { 
+
+    .topTitle{
+        font-size: 5rem;
+    }
+
+.banner{
+
+    height: 80vh;
+}
+
+.controlIcon{
+    position: absolute;
+    animation: spin 20s infinite linear;
+    filter: grayscale(01);
+    width: 50%;
+    margin-left: -25%;
+    left: 50%;
+    top: 75vh;
+}
+
+
+
+.CM1{
+
+    font-size: 3rem;
+    position: absolute;
+    width: 50%;
+    font-family: Major Mono Display;
+    text-align: center;
+    margin-left: -25%;
+    left: 50%;
+    top: 85vh;
+}
+
+.ruler{
+border-width: 0.1rem;
+}
+
+.maincard {
+    min-width: 40%;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.60), 0 15px 12px rgba(0,0,0,0.42);
+    margin-top: 5rem;
+    height: auto;
+    background-color: #1C1C1EFF;
+    border-radius: 5px;
+    padding: 3rem;
+    color: white;
+}
+
+.cardSectionBox{
+
+}
+
+.cardSection{
+}
+
+}
+
+/*ONE PLUS 6*/
+@media only screen 
+and (min-width: 412px) 
+and (max-width: 767px)
+and (orientation: portrait){
+
+    .topTitle{
+        font-size: 5rem;
+    }
+
+.banner{
+
+    height: 75vh;
+}
+
+.controlIcon{
+    position: absolute;
+    animation: spin 20s infinite linear;
+    filter: grayscale(01);
+    width: 50%;
+    margin-left: -25%;
+    left: 50%;
+    top: 65vh;
+}
+
+
+
+.CM1{
+
+    font-size: 3rem;
+    position: absolute;
+    width: 50%;
+    font-family: Major Mono Display;
+    text-align: center;
+    margin-left: -25%;
+    left: 50%;
+    top: 75vh;
+}
+
+.ruler{
+border-width: 0.1rem;
+}
+
+.maincard {
+    min-width: 40%;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.60), 0 15px 12px rgba(0,0,0,0.42);
+    margin-top: 5rem;
+    height: auto;
+    background-color: #1C1C1EFF;
+    border-radius: 5px;
+    padding: 3rem;
+    color: white;
+}
+
+.cardSectionBox{
+
+}
+
+.cardSection{
+}
+}
+
+
+ @media (min-width: 1920px) 
+{ 
+
+    .banner{
+        height: 55vh;
+    }
+
+    .blackbox{
+        margin-top: 5rem;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.controlIcon{
+    float: right;
+    width: 25rem;
+    margin-left: 75%;
+    top: 20%;
+    position: absolute;
+    animation: spin 20s infinite linear;
+    filter: grayscale(01);
+    z-index:1;
+    left: 0;
+
+/*
+    position: absolute;
+    animation: spin 20s infinite linear;
+    filter: grayscale(01);
+    width: 50%;
+    margin-left: -25%;
+    left: 50%;
+    top: 75vh;
+    */
+
+
+}
+
+.CM1{
+    font-size: 6rem;
+    position: absolute;
+    width: 25rem;
+    font-family: Major Mono Display;
+    text-align: center;
+    float: right;
+    left: 75%;
+    top: 25vh;
+    z-index: 2;
+}
+
+.maincard {
+    min-width: 40rem;
+    max-width: 50rem;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.60), 0 15px 12px rgba(0,0,0,0.42);
+    margin-top: 5rem;
+    height: auto;
+    background-color: #1C1C1EFF;
+    border-radius: 5px;
+    padding: 3rem;
+    color: white;
+}
+
+.cardSectionBox{
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 -2rem;
+}
+
+.cardSection{
+    width: 40%;
+    flex: auto;
+    padding: 0 2rem;
+    color: white;
+}
+
+
+
+  }
+
+
+
+
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+
+.commandModule{
+  font-family: 'Share Tech Mono', monospace;;
+}

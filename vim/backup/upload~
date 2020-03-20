@@ -1,0 +1,14 @@
+#!/bin/bash
+# This program synchronises the contents of the Uni directory with the icloud
+# directory and the github backup & website.
+#
+# -----------------------------------------------------------------------------
+# Sub-programs 
+# -------------
+#
+# 1. Have all markdown files be everywhere
+#
+# 2. Have all pdf in assets directories
+#
+# cp -v ~/Uni/**/*.md ~/repos/jekyll/Simulacron/_uniNotes
+
