@@ -2,6 +2,10 @@
 colorscheme dim
 filetype plugin on
 " }}}
+" Autocommands {{{
+au bufnewfile *.md 0r $NVIM/snips/md
+au bufnewfile *.sh 0r $NVIM/snips/sh
+"}}}
 " Copying vim settings for nvim use {{{
 set runtimepath^=~/.config/.vim runtimepath+=~/.config/.vim/after
     let &packpath = &runtimepath

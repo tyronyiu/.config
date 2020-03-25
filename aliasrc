@@ -1,11 +1,15 @@
 #!/bin/zsh
 alias \
-    ls="ls" \
+    ls="ls -tru" \
     v="nvim" \
     vim="nvim" \
     szrc="source ~/.zshrc" \
-    svrc="source ~/.vimrc" \
-    envim="v ~/.config/nvim/init.vim" \
+    svrc="source ~/.config/nvim/init.vim" \
     gh="cd ~/" \
-    evrc="vim ~/.vimrc" \
-    ezrc="vim ~/.zshrc" \
+    gb="cd ~/bin" \
+    gc="cd ~/.config" \
+    evrc="vim ~/.config/nvim/init.vim" \
+    earc="vim ~/.config/aliasrc" \
+    ezrc="vim ~/.config/zsh/zshrc" \
+    eyrc="vim ~/.config/yabai/yabairc" \
+    esrc="vim ~/.config/skhd/skhdrc" \

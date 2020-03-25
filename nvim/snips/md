@@ -1,0 +1,13 @@
+---
+documentclass: article
+fontsize: 16pt
+mainfont: SF Pro Text
+monofont: SF Mono
+header-includes:
+  - \hypersetup
+    {
+        colorlinks=true,
+        allbordercolors={0 0 0},
+        urlcolor=blue
+    }
+---

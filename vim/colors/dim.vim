@@ -19,7 +19,7 @@ highlight DiffText       ctermfg=0    ctermbg=11   cterm=bold
 highlight Visual         ctermfg=NONE ctermbg=NONE cterm=inverse
 
 " Highlight search matches in black, with a yellow background
-highlight Search         ctermfg=0    ctermbg=11
+highlight Search         ctermfg=0    ctermbg=14
 
 " Dim line numbers, comments, color columns, the status line, splits and sign
 " columns.
@@ -36,6 +36,7 @@ if &background == "light"
   highlight StatusLineNC ctermfg=8    ctermbg=7    cterm=NONE
   highlight VertSplit    ctermfg=8    ctermbg=7    cterm=NONE
   highlight SignColumn                ctermbg=7
+  highlight Statement    ctermfg=111
 else
   highlight LineNr       ctermfg=8
   highlight Comment      ctermfg=8
@@ -49,4 +50,5 @@ else
   highlight StatusLineNC ctermfg=7    ctermbg=8    cterm=NONE
   highlight VertSplit    ctermfg=7    ctermbg=8    cterm=NONE
   highlight SignColumn                ctermbg=8
+  hi Statement ctermfg=111
 endif

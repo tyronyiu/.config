@@ -39,5 +39,5 @@ function TRAPINT() {
 
 function chpwd() {
     ls -ltrhu 
-    #tmux rename-window "$(basename $PWD)/"
+    tmux rename-window "$(basename $PWD)/"
 }
