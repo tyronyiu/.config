@@ -4,9 +4,9 @@
 > *italic* = optional
 - [Nvim](https://neovim.io/)
 - [Zsh](https://www.zsh.org/)
-- [Oh-my-zsh](https://ohmyz.sh/)
-- [*Qutebrowser*](https://qutebrowser.org/)
-- [[Tmux]](https://github.com/tmux/tmux)
+- [Oh-my-zsh](https://ohmyz.sh/) (installation included in my .config folder.)
+- [*Qutebrowser*](https://qutebrowser.org/) 
+- [Tmux](https://github.com/tmux/tmux)
 - [Yabai](https://github.com/koekeishiya/yabai)
 - [Skhd](https://github.com/koekeishiya/skhd)
 
@@ -35,6 +35,9 @@ clean and tidy.
 In the `.config` folder there are no `.x` *dotfiles*, but the *init*
 script runs a few `ln -s` commands to *symlink* files from your `.config` folder
 to your `$HOME` directory, if needed. 
+
+To install, run the following command in the cloned directory:
+`./init.sh`
 
 > Most programs move towards setting up their *configs* and supporting files
 > inside the `.config` folder, but some didn't make the move yet.
