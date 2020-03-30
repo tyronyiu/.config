@@ -113,7 +113,7 @@ alt - t : yabai -m window --toggle float;\
 alt - o : yabai -m window --toggle topmost
 
 # toggle sticky, topmost and resize to picture-in-picture size
-alt - p : yabai -m window --toggle sticky;\
+cmd + alt - p : yabai -m window --toggle sticky;\
           yabai -m window --toggle topmost;\
           yabai -m window --toggle border;\
           yabai -m window --toggle pip
@@ -137,6 +137,13 @@ cmd - o : . ~/bin/kapp
 
 # open new qutebrowser instance
  cmd + shift - q : open -na qutebrowser
+
+shift - k [
+     "safari"       : ~/bin/nextTab
+]
+shift - j [
+     "safari"       : ~/bin/previousTab
+]
 
 # Tmux navigation {{{
 alt - j : tmux select-window -t $(expr $(tmux list-windows | grep "*" | cut -d : -f1) - 1)

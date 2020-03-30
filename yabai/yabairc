@@ -56,6 +56,8 @@ yabai -m config split_ratio 0.4
 
 # Make sure system preferences is always on top.
 yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="VirtualBoxWM" manage=off
+yabai -m rule --add app="VirtualBox" manage=off
 yabai -m rule --add app="qutebrowser" manage=on
 yabai -m rule --add app="mpv" manage=on
 
