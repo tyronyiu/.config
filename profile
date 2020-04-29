@@ -6,8 +6,8 @@ export VISUAL=nvim
 
 export PATH=$HOME/bin:$PATH
 export PATH=$PATH:/opt/local/bin
-export PATH=$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH
-export PATH="/usr/local/sbin:$PATH"
+#export PATH=$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH
+#export PATH="/usr/local/sbin:$PATH"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 PIP_REQUIRE_VIRTUALENV=false

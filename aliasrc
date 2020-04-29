@@ -7,9 +7,18 @@ alias \
     svrc="source ~/.config/nvim/init.vim" \
     gh="cd ~/" \
     gb="cd ~/bin" \
+    yy="echo -e '!!' | pbcopy" \
+    yphrase="head -n 1 ~/.ssh/vulcan | tr -d '\n' | pbcopy" \
     gc="cd ~/.config" \
-    evrc="vim ~/.config/nvim/init.vim" \
-    earc="vim ~/.config/aliasrc" \
-    ezrc="vim ~/.config/zsh/zshrc" \
-    eyrc="vim ~/.config/yabai/yabairc" \
-    esrc="vim ~/.config/skhd/skhdrc" \
+    evrc="nvim ~/.config/nvim/init.vim" \
+    earc="nvim ~/.config/aliasrc" \
+    ezrc="nvim ~/.config/zsh/zshrc" \
+    eyrc="nvim ~/.config/yabai/yabairc" \
+    esrc="nvim ~/.config/skhd/skhdrc" \
+    vv="cd ~/Documents/almanac && nvim ~/Documents/almanac/index.md" \
+    ebmks="nvim ~/.config/bookmarks" \
+    ezext="nvim ~/.config/zextensions" \
+    ekrc="nvim ~/.config/kitty/kitty.conf" \
+    vurls="bat ~/Documents/almanac/urls.md" \
+    eurls="nvim ~/Documents/almanac/urls.md" \
+    copyLastCmd="fc -ln -1 | awk '{\$1=\$1}1' | tr -d "\n" | pbcopy " \

@@ -1,41 +1,44 @@
 #!/bin/zsh
+
+#TERM=xterm
+TERM=xterm-256color
 # enable vim mode on commmand line
 #set -o vi 
-bindkey -v
-bindkey -a u undo
-bindkey -a '^T' redo
-bindkey '^?' backward-delete-char  #backspace
+#bindkey -v
+#bindkey -a u undo
+#bindkey -a '^T' redo
+#bindkey '^?' backward-delete-char  #backspace
 #bindkey '\e' vi-cmd-mode
 export KEYTIMEOUT=1
 
 # history search in vim mode
 # http://zshwiki.org./home/zle/bindkeys#why_isn_t_control-r_working_anymore
 # ctrl+r to search history
-bindkey -M viins '^r' history-incremental-search-backward
-bindkey -M vicmd '^r' history-incremental-search-backward
+#bindkey -M viins '^r' history-incremental-search-backward
+#bindkey -M vicmd '^r' history-incremental-search-backward
 
-vim_ins_mode="%{$fg[cyan]%}[INS]%{$reset_color%}"
-vim_cmd_mode="%{$fg[green]%}[CMD]%{$reset_color%}"
-vim_mode=$vim_ins_mode
+#vim_ins_mode="%{$fg[cyan]%}[INS]%{$reset_color%}"
+#vim_cmd_mode="%{$fg[green]%}[CMD]%{$reset_color%}"
+#vim_mode=$vim_ins_mode
 
-function zle-keymap-select {
-  vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
-  zle reset-prompt
-}
-zle -N zle-keymap-select
-
-function zle-line-finish {
-  vim_mode=$vim_ins_mode
-}
-zle -N zle-line-finish
+#function zle-keymap-select {
+#  vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
+#  zle reset-prompt
+#}
+#zle -N zle-keymap-select
+#
+#function zle-line-finish {
+#  vim_mode=$vim_ins_mode
+#}
+#zle -N zle-line-finish
 
 # Fix a bug when you C-c in CMD mode and you'd be prompted with CMD mode indicator, while in fact you would be in INS mode
 # Fixed by catching SIGINT (C-c), set vim_mode to INS and then repropagate the SIGINT, so if anything else depends on it, we will not break it
 # Thanks Ron! (see comments)
-function TRAPINT() {
-  vim_mode=$vim_ins_mode
-  return $(( 128 + $1 ))
-} 
+#function TRAPINT() {
+#  vim_mode=$vim_ins_mode
+#  return $(( 128 + $1 ))
+#} 
 
 function chpwd() {
     ls -ltrhu 

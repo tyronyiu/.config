@@ -2,12 +2,15 @@
 export ZSH=$HOME/.config/oh-my-zsh
 
 ZSH_THEME="TY"
-
+export FZF_BASE=/usr/local/bin/fzf
 plugins=(
   git
+  fzf
   osx
   zsh-autosuggestions
   zsh-syntax-highlighting  
+  copybuffer
+#  vi-mode
 )
 
 # Loading oh-my-zsh
@@ -17,6 +20,7 @@ source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc" 
 [ -f "$HOME/.config/inputrc" ] && source "$HOME/.config/inputrc" 
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
+[ -f "$HOME/.config/zextensions" ] && source "$HOME/.config/zextensions"
 
 # enable 'pass' extension 
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
@@ -27,3 +31,5 @@ export NVIM=~/.config/nvim/
 # ---------------
 # Browser-Sync setup
 #export LOCAL_IP=`ipconfig getifaddr en0`
+
+
