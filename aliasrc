@@ -1,6 +1,6 @@
 #!/bin/zsh
 alias \
-    ls="ls -tru" \
+    ls="lsd -tr" \
     v="nvim" \
     vim="nvim" \
     szrc="source ~/.zshrc" \

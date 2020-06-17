@@ -1,16 +1,38 @@
 #!/bin/zsh
+export EDITOR=nvim
+export VISUAL="less -R"
+
 go() {
 bookmarks=/Users/tyyiu/.config/bookmarks
 choice=$(cat $bookmarks | cut -d ":" -f1 | fzf +m) && \
 cd $(grep $choice $bookmarks | cut -d ":" -f2)
 }
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
-
-export FZF_TMUX=1
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+#export FZF_TMUX=1
 setopt HIST_IGNORE_ALL_DUPS
 export HISTTIMEFORMAT="[%F %T] "
 setopt EXTENDED_HISTORY
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000000
 #setopt INC_APPEND_HISTORY
+source $HOME/.config/zsh-interactive-cd.plugin.zsh
+. ~/.config/z/z.sh
+unalias z 2> /dev/null
+z() {
+  [ $# -gt 0 ] && _z "$*" && return
+  cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
+}
+
+export NNN_PLUG='o:fzopen;p:pdfview;d:diffs;m:nmount;n:notes;v:imgview;t:imgthumb'
+export NNN_USE_EDITOR=1  
+
+
+# kill any existing limelight process if one exists, before we launch a new one
+#killall ~/bin/limelight &> /dev/null
+#~/bin/limelight &> /dev/null &
+
+# sourcing config file for limelight
+#. ~/.config/limelight/limelightrc

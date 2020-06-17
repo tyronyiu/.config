@@ -41,6 +41,6 @@ export KEYTIMEOUT=1
 #} 
 
 function chpwd() {
-    ls -ltrhu 
+    lsd -trh 
     tmux rename-window "$(basename $PWD)/"
 }

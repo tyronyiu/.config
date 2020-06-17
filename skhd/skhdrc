@@ -61,6 +61,7 @@ shift + cmd - d : yabai -m window --resize right:-20:0
 # toggle float
 alt - f : yabai -m window --toggle float
 
+shift + alt - f : yabai -m window --toggle float && yabai -m window --toggle zoom-fullscreen;
 # make floating window fill screen
 fn - f : yabai -m window --grid 1:1:0:0:1:1
 
@@ -81,7 +82,7 @@ alt - t : yabai -m window --toggle float;\
           yabai -m window --grid 6:6:1:1:4:4
 
 # balance size of windows
-shift + alt - 0 : yabai -m space --balance
+#shift + alt - 0 : yabai -m space --balance
 
 # unused {{{
 #--------------------
@@ -134,21 +135,22 @@ shift + cmd - 0 : yabai -m window --space 10; yabai -m space --focus 10
 # fast focus desktop {{{
 #--------------------
 
-lcmd - h : yabai -m window --focus prev
+cmd - h : yabai -m space --focus prev
 lcmd - k : yabai -m space --focus next
+lcmd - l : yabai -m space --focus next
 lcmd - j : yabai -m space --focus prev
 #cmd + alt - x : yabai -m space --focus recent
 #cmd + alt - z : yabai -m space --focus prev
 #cmd + alt - c : yabai -m space --focus next
-#cmd + alt - 1 : yabai -m space --focus 1
-#cmd + alt - 2 : yabai -m space --focus 2
-#cmd + alt - 3 : yabai -m space --focus 3
-#cmd + alt - 4 : yabai -m space --focus 4
-#cmd + alt - 5 : yabai -m space --focus 5
-#cmd + alt - 6 : yabai -m space --focus 6
-#cmd + alt - 7 : yabai -m space --focus 7
-#cmd + alt - 8 : yabai -m space --focus 8
-#cmd + alt - 9 : yabai -m space --focus 9
+cmd + alt - 1 : yabai -m space --focus 1
+cmd + alt - 2 : yabai -m space --focus 2
+cmd + alt - 3 : yabai -m space --focus 3
+cmd + alt - 4 : yabai -m space --focus 4
+cmd + alt - 5 : yabai -m space --focus 5
+cmd + alt - 6 : yabai -m space --focus 6
+cmd + alt - 7 : yabai -m space --focus 7
+cmd + alt - 8 : yabai -m space --focus 8
+cmd + alt - 9 : yabai -m space --focus 9
 #cmd + alt - 0 : yabai -m space --focus 10
 
 #}}}
@@ -178,10 +180,10 @@ alt - x : yabai -m space --mirror x-axis
 
 # open commands / programs {{{
 #--------------------
-
 # open terminal
-rcmd - return : /Applications/Kitty.app/Contents/MacOS/kitty -o window_padding_width=25 --single-instance -d ~;\
+rcmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~;\
 yabai -m window --focus first
+# -o window_padding_width=25
 
 # open almanac (note book)
 rcmd - p : /Applications/Kitty.app/Contents/MacOS/kitty -o window_padding_width=25 -1 --wait-for-single-instance-window-close -d ~ ~/bin/vv;\
@@ -199,20 +201,22 @@ rcmd - i : /Applications/Kitty.app/Contents/MacOS/kitty -o window_padding_width=
 yabai -m window --focus first
 
 # open synonym generator
-rcmd - s : /Applications/Kitty.app/Contents/MacOS/kitty -o window_padding_width=25 -1 --wait-for-single-instance-window-close -d ~ ~/bin/fsym;\
-yabai -m window --focus first
+#rcmd - s : /Applications/Kitty.app/Contents/MacOS/kitty -o window_padding_width=25 -1 --wait-for-single-instance-window-close -d ~ ~/bin/fsym;\
+#yabai -m window --focus first
 
 #open mpv with copied url / path
-rcmd - m : mpv $(pbpaste) && yabai -m window --focus first
+rcmd - m : mpv $(pbpaste); yabai -m window --focus first
 
 # open new qutebrowser instance
 rcmd - q : open -na qutebrowser
+
+rcmd - s : . ~/bin/sneak
 #}}}
 # safari settings{{{
 #--------------------
 
 # open current tab in incognito (safari)
-shift + alt - 0 : . ~/bin/ghostmode
+#shift + alt - 0 : ~/bin/sneak
 
 cmd - y [
     # copies url from safari tab
@@ -221,14 +225,14 @@ cmd - y [
 ]
 # switch safari tabs{{{
 #--------------------
-shift - k [
-    # go to next safari tab
-     "safari"       : ~/bin/nextTab
-]
-shift - j [
-    # go to previous safari tab
-     "safari"       : ~/bin/previousTab
-]
+#shift - k [
+#    # go to next safari tab
+#     "safari"       : ~/bin/nextTab
+#]
+#shift - j [
+#    # go to previous safari tab
+#     "safari"       : ~/bin/previousTab
+#]
 #}}}
 #}}}
 # switch tabs{{{
@@ -237,7 +241,15 @@ shift - j [
 # go to previous tab{{{
 #--------------------
 
-alt - j [
+lalt - h [
+    # go to next tmux window (use windows over tabs)
+    "iTerm2"         : tmux select-window -t $(expr $(tmux list-windows | grep "*" | cut -d : -f1) - 1)
+    "Kitty"         : tmux select-window -t $(expr $(tmux list-windows | grep "*" | cut -d : -f1) - 1)
+    "Terminal"         : tmux select-window -t $(expr $(tmux list-windows | grep "*" | cut -d : -f1) - 1)
+    # go to previous safari tab
+    "safari"        : ~/bin/previousTab
+]
+lalt - j [
     # go to next tmux window (use windows over tabs)
     "iTerm2"         : tmux select-window -t $(expr $(tmux list-windows | grep "*" | cut -d : -f1) - 1)
     "Kitty"         : tmux select-window -t $(expr $(tmux list-windows | grep "*" | cut -d : -f1) - 1)
@@ -249,7 +261,15 @@ alt - j [
 # go to next tab{{{
 #--------------------
 
-alt - k [
+lalt - l [
+    # go to next tmux window (use windows over tabs)
+    "iTerm2"         : tmux select-window -t $(expr $(tmux list-windows | grep "*" | cut -d : -f1) + 1)
+    "Kitty"         : tmux select-window -t $(expr $(tmux list-windows | grep "*" | cut -d : -f1) + 1)
+    "Terminal"         : tmux select-window -t $(expr $(tmux list-windows | grep "*" | cut -d : -f1) + 1)
+    # go to next safari tab
+    "safari"        : ~/bin/nextTab
+]
+lalt - k [
     # go to next tmux window (use windows over tabs)
     "iTerm2"         : tmux select-window -t $(expr $(tmux list-windows | grep "*" | cut -d : -f1) + 1)
     "Kitty"         : tmux select-window -t $(expr $(tmux list-windows | grep "*" | cut -d : -f1) + 1)

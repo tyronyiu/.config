@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
+
 # Make sure system preferences is always on top.
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="System Preferences" manage=off
@@ -13,37 +14,39 @@ yabai -m rule --add app="mpv" manage=on
 #yabai -m rule --add app="iTerm2" opacity=0.5
 #yabai -m rule --add app="zoom.us" opacity=0.5
 
+
 # bar settings
-yabai -m config status_bar                   on
-yabai -m config status_bar_text_font         "SF Mono:Bold:12.0"
-yabai -m config status_bar_icon_font         "SF Mono:Medium:12.0"
-yabai -m config status_bar_background_color  0xff000000
-yabai -m config status_bar_foreground_color  0xffffffff
-yabai -m config status_bar_space_icon_strip  􀇳 􀎬 􀈫 􀈕 􀍕 􀌤 􀑯
-yabai -m config status_bar_power_icon_strip  􀛨
-yabai -m config status_bar_space_icon        􀏮
-yabai -m config status_bar_clock_icon        􀐫
+#yabai -m config status_bar                   off 
+#yabai -m config status_bar_position          bottom
+#yabai -m config status_bar_text_font         "SF Mono:Bold:22.0"
+#yabai -m config status_bar_icon_font         "SF Mono:Medium:22.0"
+#yabai -m config status_bar_background_color  0xff000000
+#yabai -m config status_bar_foreground_color  0xffffffff
+#yabai -m config status_bar_space_icon_strip  􀇳 􀎬 􀈫 􀈕 􀍕 􀌤 􀑯
+#yabai -m config status_bar_power_icon_strip  􀛨
+#yabai -m config status_bar_space_icon        􀏮
+#yabai -m config status_bar_clock_icon        􀐫
 
 # global settings
 yabai -m config focus_follows_mouse          autofocus
 yabai -m config mouse_follows_focus          on
 yabai -m config window_placement             first_child 
 yabai -m config window_topmost               on
-yabai -m config window_opacity               off
-yabai -m config window_opacity_duration      0.5
+#yabai -m config window_opacity               off
+#yabai -m config window_opacity_duration      0.5
 yabai -m config window_shadow                off
-yabai -m config window_border                on
-yabai -m config window_border_placement      inset
-yabai -m config window_border_width          1
-yabai -m config window_border_radius         0.8
-yabai -m config active_window_border_topmost on
-yabai -m config active_window_border_color   0xFFFFFFFF
+#yabai -m config window_border                on
+#yabai -m config window_border_placement      inset
+#yabai -m config window_border_width          1
+#yabai -m config window_border_radius         0.8
+#yabai -m config active_window_border_topmost on
+#yabai -m config active_window_border_color   0xFFFFFFFF
 #Hex(9CE34E)  0xFF9CE34E 
 #FF12F359 > Hex(12F359)
-yabai -m config normal_window_border_color   0xff505050
-yabai -m config insert_window_border_color   0xffd75f5f
-yabai -m config active_window_opacity        1.0
-yabai -m config normal_window_opacity        0.7
+#yabai -m config normal_window_border_color   0xff505050
+#yabai -m config insert_window_border_color   0xffd75f5f
+#yabai -m config active_window_opacity        1.0
+#yabai -m config normal_window_opacity        0.7
 yabai -m config auto_balance                 on
 yabai -m config mouse_modifier               
 yabai -m config mouse_action1                move
@@ -51,11 +54,11 @@ yabai -m config mouse_action2                resize
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  0
-yabai -m config bottom_padding               0
-yabai -m config left_padding                 0
-yabai -m config right_padding                0
-yabai -m config window_gap                   5
+yabai -m config top_padding                  26
+yabai -m config bottom_padding               1
+yabai -m config left_padding                 1
+yabai -m config right_padding                1
+yabai -m config window_gap                   2
 
 # Override default layout for space 1 only
 yabai -m config --space 1 layout bsp
@@ -63,12 +66,17 @@ yabai -m config --space 2 layout bsp
 #yabai -m config --app="Alacritty" --padding abs:20:20:20:20
 #yabai -m config --app="Safari" --toggle float
 
- New window spawns to the left if vertical split, or top if horizontal split
-yabai -m config window_placement first_child
-#yabai -m config window_placement second_child 
-
 # Floating point value between 0 and 1 (default: 0.5)
 #yabai -m config split_ratio 0.6
 
+# sourcing config file for limelight
+#. ~/.config/limelight/limelightrc
 
+# kill any existing limelight process if one exists, before we launch a new one
+killall ~/bin/limelight &> /dev/null
+~/bin/limelight &> /dev/null &
+
+# sourcing config file for limelight
+. ~/.config/limelight/limelightrc
 echo "yabai configuration loaded.."
+

@@ -19,3 +19,5 @@ export CLICOLOR_FORCE=1
 # Include hidden files in autocomplete:
 _comp_options+=(globdots)
 source ~/.config/zsh/zshrc
+
+export PATH="$HOME/.cargo/bin:$PATH"
