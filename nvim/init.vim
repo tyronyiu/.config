@@ -96,13 +96,15 @@ nnoremap <Leader>p :reg <CR>
         Plug 'arcticicestudio/nord-vim'
         Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
         Plug 'junegunn/fzf.vim'
+        Plug 'https://tpope.io/vim/fugitive.git'
+        Plug 'https://github.com/airblade/vim-gitgutter.git'
         Plug 'mcchrish/nnn.vim'
         Plug 'https://github.com/Yggdroot/indentLine'
         Plug 'https://github.com/tpope/vim-surround'
         Plug 'junegunn/vim-easy-align'
         Plug 'https://github.com/gorodinskiy/vim-coloresque.git'
         Plug 'ayu-theme/ayu-vim'
-        Plug 'https://github.com/jiangmiao/auto-pairs'
+        "Plug 'https://github.com/jiangmiao/auto-pairs'
         Plug 'pbrisbin/vim-mkdir'
     " deoplete {{{
     " -----------------------
@@ -375,10 +377,6 @@ map <C-l> <C-W>l<C-W>_
 map <C-h> <C-W>h<C-W>_
 set fillchars+=vert:│
 hi VertSplit ctermbg=NONE guibg=NONE
-set showtabline=0
-set cmdheight=1
-set conceallevel=0
-set laststatus=2
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
@@ -454,3 +452,11 @@ nnoremap <S-Tab> :bprevious<CR>
         "set statusline+=%2*%10((%1*line:%2*%l,\ %1*col:%2*%c)%)\ " line and column
     "}}}
 "}}}
+
+set showtabline=0
+set cmdheight=1
+let g:indentLine_setConceal = 0
+set conceallevel=0
+set laststatus=2
+set nojs
+set mouse=a

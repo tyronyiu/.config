@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/Users/tyyiu/Documents/HH/Bewerbung/Bsp-Bin'
+let g:netrw_dirhist_7='/Users/tyyiu/repos/markdown-cv/.git'
+let g:netrw_dirhist_6='/Users/tyyiu/.config/z'
+let g:netrw_dirhist_5='/Users/tyyiu/.config/spacebar'
 let g:netrw_dirhist_4='/Users/tyyiu/repos/contact-tracing-clients/demo/src'
 let g:netrw_dirhist_3='/Users/tyyiu/.config/limelight/src'
 let g:netrw_dirhist_2='/Users/tyyiu/.config/tmux/plugins/tpm/bindings'

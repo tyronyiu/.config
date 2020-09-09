@@ -1,6 +1,4 @@
 #!/bin/zsh
-export EDITOR=nvim
-export VISUAL="less -R"
 
 go() {
 bookmarks=/Users/tyyiu/.config/bookmarks

@@ -22,3 +22,4 @@ alias \
     vurls="bat ~/Documents/almanac/urls.md" \
     eurls="nvim ~/Documents/almanac/urls.md" \
     copyLastCmd="fc -ln -1 | awk '{\$1=\$1}1' | tr -d "\n" | pbcopy " \
+    gs="git status" \

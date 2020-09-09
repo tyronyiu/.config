@@ -54,11 +54,11 @@ yabai -m config mouse_action2                resize
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  26
-yabai -m config bottom_padding               1
-yabai -m config left_padding                 1
-yabai -m config right_padding                1
-yabai -m config window_gap                   2
+yabai -m config top_padding                  76
+yabai -m config bottom_padding               50
+yabai -m config left_padding                 50
+yabai -m config right_padding                50
+yabai -m config window_gap                   25
 
 # Override default layout for space 1 only
 yabai -m config --space 1 layout bsp
@@ -73,10 +73,7 @@ yabai -m config --space 2 layout bsp
 #. ~/.config/limelight/limelightrc
 
 # kill any existing limelight process if one exists, before we launch a new one
-killall ~/bin/limelight &> /dev/null
-~/bin/limelight &> /dev/null &
-
-# sourcing config file for limelight
-. ~/.config/limelight/limelightrc
+#killall limelight &> /dev/null
+#limelight -c ~/.config/limelight/limelightrc &> /dev/null &
 echo "yabai configuration loaded.."
 
