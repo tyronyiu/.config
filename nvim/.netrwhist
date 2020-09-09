@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/tyyiu/.config/.git/objects'
+let g:netrw_dirhist_9='/Users/tyyiu/.config/.git'
 let g:netrw_dirhist_8='/Users/tyyiu/Documents/HH/Bewerbung/Bsp-Bin'
 let g:netrw_dirhist_7='/Users/tyyiu/repos/markdown-cv/.git'
 let g:netrw_dirhist_6='/Users/tyyiu/.config/z'
