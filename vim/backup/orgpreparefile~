@@ -1,6 +1,0 @@
-asciiFile=~/bin/orgmodeascii
-path=~/Documents/org-mode
-filename=$(date +\"%d\".txt)
-touch $path/$filename
-cat $asciiFile > "$path/$filename"
-

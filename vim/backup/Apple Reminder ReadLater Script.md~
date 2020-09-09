@@ -1,7 +1,0 @@
-## Apple 🍏 Reminders ReadLater Script
-
---------------------------------
-
-This script taps into OSASCRIPT, Apple-script 🍏 to connect the Command-Line to
-Apple's Native applications. The ReadLater script saves a title + description
-into a predefined Reminders List.

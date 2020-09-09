@@ -1,3 +1,0 @@
-#!/bin/bash
-curl -s "http://api.bitly.com/v3/shorten?login=nickholb&apiKey=R_c54a43916b20475b9dcdd121bf99fd6b&longUrl=$(pbpaste)&format=txt" | pbcopy
-notification= osascript -e 'display notification "shortened link has been copied to your clipboard. Simply CMD + V / paste it anywhere." with title "Success"'

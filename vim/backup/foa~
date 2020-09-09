@@ -1,7 +1,0 @@
-# Fuzzy Open App (fa) {{{
-#-------------------------------------
-foa() {
-    open -a "$(find /Applications -name '*app' -maxdepth 1 | sed 's|/Applications/||;s|\.app||' | fzf-tmux -l 20% --multi --reverse )"
-}
-foa
-#}}}

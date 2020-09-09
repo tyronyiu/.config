@@ -1,8 +1,0 @@
-graph TD
-A[open App]-->B{Is user registered?}
-B-->|No| C(sign up)
-C-->F(create account & Log in)
-F-->G[Main Storyboard]
-B-->|Yes| D(log in)
-D-->E[Main Storyboard]
-id2("Main Storyboard" is the app's home-screen)

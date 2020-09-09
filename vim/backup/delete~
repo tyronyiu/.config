@@ -1,2 +1,0 @@
-#!/bin/bash
-mdfind -0 "\@1" | xargs -0 sudo rm -vrf
