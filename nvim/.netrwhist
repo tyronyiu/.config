@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =0
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/Users/tyyiu/repos/contact-tracing-01/src/components'
 let g:netrw_dirhist_0='/Users/tyyiu/.config/.git/objects'
 let g:netrw_dirhist_9='/Users/tyyiu/.config/.git'
 let g:netrw_dirhist_8='/Users/tyyiu/Documents/HH/Bewerbung/Bsp-Bin'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_5='/Users/tyyiu/.config/spacebar'
 let g:netrw_dirhist_4='/Users/tyyiu/repos/contact-tracing-clients/demo/src'
 let g:netrw_dirhist_3='/Users/tyyiu/.config/limelight/src'
 let g:netrw_dirhist_2='/Users/tyyiu/.config/tmux/plugins/tpm/bindings'
-let g:netrw_dirhist_1='/Users/tyyiu/.config/tmux/plugins/tpm'
