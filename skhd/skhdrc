@@ -7,6 +7,10 @@
 # window settings{{{
 #--------------------
 
+# auto-resize
+alt - t : yabai -m window --toggle float;\
+          yabai -m window --grid 4:4:1:0:2:4
+
 # focus window{{{
 #--------------------
 
@@ -78,8 +82,8 @@ cmd + alt - p : yabai -m window --toggle sticky;\
           yabai -m window --toggle pip
 
 # float / unfloat window and center on screen
-alt - t : yabai -m window --toggle float;\
-          yabai -m window --grid 6:6:1:1:4:4
+#alt - t : yabai -m window --toggle float;\
+#          yabai -m window --grid 6:6:1:1:4:4
 
 # balance size of windows
 #shift + alt - 0 : yabai -m space --balance
@@ -136,9 +140,9 @@ shift + cmd - 0 : yabai -m window --space 10; yabai -m space --focus 10
 #--------------------
 
 cmd - h : yabai -m space --focus prev
-#lcmd - k : yabai -m space --focus next
-#lcmd - l : yabai -m space --focus next
-#lcmd - j : yabai -m space --focus prev
+lcmd - k : yabai -m space --focus next
+lcmd - l : yabai -m space --focus next
+lcmd - j : yabai -m space --focus prev
 #cmd + alt - x : yabai -m space --focus recent
 #cmd + alt - z : yabai -m space --focus prev
 #cmd + alt - c : yabai -m space --focus next
@@ -181,36 +185,36 @@ alt - x : yabai -m space --mirror x-axis
 # open commands / programs {{{
 #--------------------
 # open terminal
-rcmd - return : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~;\
-yabai -m window --focus first
+rcmd - return : ~/bin/foa
+
 # -o window_padding_width=25
 
 # open almanac (note book)
-rcmd - p : /Applications/Kitty.app/Contents/MacOS/kitty -o window_padding_width=25 -1 --wait-for-single-instance-window-close -d ~ ~/bin/vv;\
-yabai -m window --focus first
+#rcmd - p : /Applications/Kitty.app/Contents/MacOS/kitty -o window_padding_width=25 -1 --wait-for-single-instance-window-close -d ~ ~/bin/vv;\
+#yabai -m window --focus first
 
 # open application launching app (with kitty instead of iTerm or alacritty
 # quicker in combination than oapp)
-rcmd - o : /Applications/Kitty.app/Contents/MacOS/kitty -o window_padding_width=0 -1 --wait-for-single-instance-window-close -d ~ ~/bin/kapp;\
-yabai -m window --focus first;\
-yabai -m window --toggle float;\
-yabai -m window --grid 5:4:1:1:2:2
+#rcmd - o : /Applications/Kitty.app/Contents/MacOS/kitty -o window_padding_width=0 -1 --wait-for-single-instance-window-close -d ~ ~/bin/kapp;\
+#yabai -m window --focus first;\
+#yabai -m window --toggle float;\
+#yabai -m window --grid 5:4:1:1:2:2
 
 # open file manager (nnn)
-rcmd - i : /Applications/Kitty.app/Contents/MacOS/kitty -o window_padding_width=25 -1 --wait-for-single-instance-window-close -d ~ /usr/local/bin/nnn;\
-yabai -m window --focus first
+#rcmd - i : /Applications/Kitty.app/Contents/MacOS/kitty -o window_padding_width=25 -1 --wait-for-single-instance-window-close -d ~ /usr/local/bin/nnn;\
+#yabai -m window --focus first
 
 # open synonym generator
 #rcmd - s : /Applications/Kitty.app/Contents/MacOS/kitty -o window_padding_width=25 -1 --wait-for-single-instance-window-close -d ~ ~/bin/fsym;\
 #yabai -m window --focus first
 
 #open mpv with copied url / path
-rcmd - m : mpv $(pbpaste); yabai -m window --focus first
+#rcmd - m : mpv $(pbpaste); yabai -m window --focus first
 
 # open new qutebrowser instance
-rcmd - q : open -na qutebrowser
+#rcmd - q : open -na qutebrowser
 
-rcmd - s : . ~/bin/sneak
+#rcmd - s : . ~/bin/sneak
 #}}}
 # safari settings{{{
 #--------------------
@@ -290,5 +294,22 @@ lcmd - s [
 #}}}
 
 #}}}
+# Stackline Keybindings {{{
+# Focus window up/down in stack
+ctrl - n : yabai -m window --focus stack.next
+ctrl - p : yabai -m window --focus stack.prev
 
+# Add the active window  to the window or stack to the {direction}
+# Note that this only works when the active window does *not* already belong to a stack
+cmd + ctrl - left  : yabai -m window west --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - down  : yabai -m window south --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - up    : yabai -m window north --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - right : yabai -m window east --stack $(yabai -m query --windows --window | jq -r '.id')
+
+# }}}
+
+# Show SKHD keybindings (this)
+rcmd + ralt - s : /Applications/iTerm "esrc"
 #}}}
+
+

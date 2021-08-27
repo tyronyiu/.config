@@ -76,7 +76,6 @@
 		<Setting name="Queue successful autoclear">0</Setting>
 		<Setting name="Queue column widths">180 112 180 80 60 150</Setting>
 		<Setting name="Local filelist colwidths">120 80 100 120</Setting>
-		<Setting name="Splitter positions (v2)">97 -285 457956914 100 124 500000000</Setting>
 		<Setting name="Local filelist sortorder">0 0</Setting>
 		<Setting name="Remote filelist sortorder">0 0</Setting>
 		<Setting name="Time Format" />
@@ -131,47 +130,126 @@
 		<Setting name="Kiosk mode">1</Setting>
 		<Setting name="Disable update check">0</Setting>
 		<Setting name="Cache directory" />
-		<Setting name="File associations (v2)" platform="mac" />
 		<Setting name="Highest shown overlay id">0</Setting>
-		<Setting name="Last automatic update version">3.50.0</Setting>
-		<Setting name="Last automatic update check">2020-11-12 17:49:46</Setting>
-		<Setting name="Update Check New Version" platform="mac">nightly 2020-11-11 https://filezilla-project.org/nightlies/2020-11-11/x86_64-apple-darwin18.2.0/FileZilla3.app.tar.bz2 14405567 sha512 cbd0a819c5f9d62102cc4eb1ff46cc733e9a5427d58313469d4fd3a3f5b287659e28e2845a34f945260a28181893003e28c3dfa5e838df9411777332bf6c9bcf sig:rPfD4YpcGHy5U1EwIqCEOtP8/hAh6yZAr5NUidEfndpnTaqiOQymgMJnxka2UNV+Bw/Tk1UY0CQFUqrWiBNIAw
-release 3.51.0 https://dl3.cdn.filezilla-project.org/FileZilla_3.51.0_macosx-x86.app.tar.bz2 16175443 sha512 82d16bf43828391fc0b63e41bd508ef320aa702ca10be1415eb1aeb7e5af9f084d4ba6d39c230f79c8cbb026153c25dcbc8f24b0cfe8f4a1c9246bf0f933a373 sig:9oadasBpmFpO35YP/KmCzR6BXcDK3Et4Wzyt1dSPYeOmRGWCaAACy8FoLWv/TVzM5pbxIy3vdgCxpqMrX5mNDA
-
-3.51.0 (2020-10-20)
-
-- Fixed import of sites protected with a different master password
-- Directory comparison now works correctly with non-default file name sorting settings
-- Small search dialog fixes
-
-3.51.0-rc1 (2020-10-13)
-
-- Refactored how the queue stores transfer flags
-- Refactored internals to be more modular
-- Linux: Disable receive buffer tuning if it results in unexpected consequences
-- Distinguish between Cancel and No in the file changed dialog
-- Small fixes to changing or disabling a master password
-</Setting>
 		<Setting name="Greeting version">3.51.0</Setting>
-		<Setting name="Sitemanager last selected">0/New site 2</Setting>
-		<Setting name="Site Manager position">0 224 201 992 494 </Setting>
 		<Setting name="Remote filelist colwidths">121 76 80 151 80 80</Setting>
-		<Setting name="Window position and size">0 50 74 1340 700 </Setting>
+		<Setting name="Last automatic update version">3.51.0</Setting>
+		<Setting name="Sitemanager last selected">0/New site 2</Setting>
+		<Setting name="Site Manager position">0 224 188 992 494 </Setting>
+		<Setting name="Window position and size">0 0 24 1440 774 </Setting>
+		<Setting name="Last automatic update check">2021-08-24 18:16:15</Setting>
+		<Setting name="Update Check New Version" platform="mac">nightly 2021-08-24 https://filezilla-project.org/nightlies/2021-08-24/x86_64-apple-darwin18.2.0/FileZilla3.app.tar.bz2 14678979 sha512 d0a00635454eedad570ac82c77928593785877fa684a6e9c6cf71f6cdf6959c99bb9785cf1ad8a3874a3f296a0f839f08961151575d0f161a6f8a869e130126a sig:6VaFdE+uILrD/PxmBZc/3TXWY7gyhHypjOvy0geYjo9xNkPqBwtWYIn+R9Z3n/dFhXwnYeyMC9FoLDvbJBK1Dg
+release 3.55.1 https://dl4.cdn.filezilla-project.org/FileZilla_3.55.1_macosx-x86.app.tar.bz2 14445609 sha512 ac3f837a6ab816bf4f999f8e5082bbdc399b7aeb36c67e0e5ad2f829bb30bbf35c31b427be8fe9613420ec81e12500c28c9a2768fac9612907c40a5487d1ae8c sig:bVuyTlm7pNdnG/LrAb81BYhCz/cFnm1SOEkZco589e7xLCiYDKpeI1Ra0C+HSKDRKPeOtvsd0TPN/rJZaQ1oCw
+
+3.55.1 (2021-08-09)
+
+- Fixed a crash if a tree view items are deleted at the same time as something is being dragged over the tree view
+- Updated to libfilezilla 0.31.1 to fix an issue with SIGPIPE on *nix
+
+3.55.0 (2021-07-09)
+
+- Updated translations
+
+3.55.0-rc1 (2021-07-02)
+
+- Updated SFTP components
+- Set appropriate ALPN on TLS connections
+- Fixed loading of settings files that were moved between platforms
+- Refactored updater internals
+
+3.54.1 (2021-05-13)
+
+- Fix control visibility logic in Site Manager
+
+3.54.0 (2021-05-12)
+
+- SFTP: Fixed a regression loading configured key files
+
+3.54.0-rc1 (2021-05-04)
+
+- Refactored network activity handling, the activity indicators tooltips now display more accurate data
+- Updated SFTP components
+- Small performance improvement sorting very large directory listings
+- Fixed a crash changing numeric permissions value in chmod dialog
+
+3.53.1 (2021-03-23)
+
+- Removed an error message on new installation where there is no sitemanager.xml yet
+- Fixed SOCKS5 proxy support
+
+3.53.0 (2021-03-15)
+
+- HTTP: Handle servers sending early replies
+
+3.53.0-rc1 (2021-03-05)
+
++ Require explicit confirmation on FTP servers not supporting TLS session esumption on the data connection
++ Access Grant support for Tardigrade
+- MSW: Fixed handle leak if using SFTP
+- FTP: Fixed cancelling listings on very slow computers with extremely fast network connection
+- Fixed loading of custom FTP proxy setting when opening the settings dialog
+- Internal restructuring
+
+3.52.2 (2021-01-18)
+
+- When restoring the main window position at startup, detect if the title bar would become hidden behind taskbars or global menu bars and reposition it appropriately
+- SFTP: Fixed preserving of timestamps on downloads
+
+3.52.0.5 (2021-01-08)
+
+- FTP: Fixed crash if downloading ASCII files with stray carriage returns
+- Fixed too strict requirements for preallocation
+- *nix: Fixed a memory leak
+
+3.52.0.4 (2021-01-07)
+
+- macOS: Work around a kernel bug where ftruncate cannot be called more than once on a shared memory object
+
+3.52.0.3 (2021-01-06)
+
+- macOS: Fix issue opening shared memory objects
+
+3.52.0.2 (2021-01-06)
+
+- HTTP: Handle multi-token Connection: headers
+
+3.52.0.1 (2021-01-05)
+
+- macOS: Rebuilt to address a toolchain issue
+
+3.52.0 (2021-01-04)
+
+- Fixed a regression with the rename file exists action on downloads
+
+3.52.0-rc1 (2020-12-29)
+
++ Added context menu item in the search dialog to close the search and set the selected directory as the current local/remote directory
+- Minor fixes for updating the HTTP transfer status
+
+3.52.0-beta1 (2020-12-17)
+
++ Use asynchronous file readers/writers in the engine
+- MSW: React to system color scheme changes
+- Fixed splitters not being draggable on newly created tabs
+- MSW: Fixed data directory lookup if run from a development environment
+</Setting>
+		<Setting name="File associations (v2)" platform="mac">html /System/Applications/TextEdit.app %f</Setting>
+		<Setting name="Splitter positions (v2)">97 -197 457956914 212 311 500000000</Setting>
 		<Setting name="Tab data" sensitive="1">
 			<Tabs>
 				<Tab connected="1" selected="1">
-					<Host>ssh.strato.de</Host>
-					<Port>22</Port>
-					<Protocol>1</Protocol>
+					<Host>dedi1956.your-server.de</Host>
+					<Port>21</Port>
+					<Protocol>0</Protocol>
 					<Type>0</Type>
-					<User>ty@restaurantchina.de</User>
+					<User>hambun_0</User>
 					<Logontype>2</Logontype>
+					<PasvMode>MODE_DEFAULT</PasvMode>
 					<EncodingType>Auto</EncodingType>
 					<BypassProxy>0</BypassProxy>
-					<Name>New site 2</Name>
-					<Site>0/New site 2</Site>
-					<RemotePath>1 0</RemotePath>
-					<LocalPath>/Users/tyyiu/repos/DHH/public/</LocalPath>
+					<Site></Site>
+					<RemotePath>1 0 13 searchpartner</RemotePath>
+					<LocalPath>/Users/tyyiu/repos/hh-originale/hh-originale-lookup/build/</LocalPath>
 				</Tab>
 			</Tabs>
 		</Setting>

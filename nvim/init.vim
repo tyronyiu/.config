@@ -12,6 +12,7 @@
     set nocompatible
     filetype plugin on
     syntax enable 
+    syntax on
     filetype plugin indent on
     " set spell correction language
     set spelllang=en
@@ -54,7 +55,7 @@ au bufnewfile *.sh 0r $NVIM/snips/sh
 "au bufnewfile *.md 0r $NVIM/snips/md
 
 " setup almanac (notebook) environment
-autocmd BufRead,BufNewFile */almanac/** call Wiki()
+"autocmd BufRead,BufNewFile */almanac/** call Wiki()
 
 " update tmux window names
 autocmd BufReadPost,FileReadPost,BufNewFile,BufLeave * call system("tmux rename-window " . expand("%:t"))
@@ -93,12 +94,17 @@ nnoremap <Leader>p :reg <CR>
 " -----------------------
 
     call plug#begin('~/.config/nvim/plugged')
+        Plug 'yuezk/vim-js'
+        Plug 'pangloss/vim-javascript'
+        Plug 'vimwiki/vimwiki'
+        Plug 'maxmellon/vim-jsx-pretty'
         Plug 'arcticicestudio/nord-vim'
         Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
         Plug 'junegunn/fzf.vim'
         Plug 'https://tpope.io/vim/fugitive.git'
         Plug 'https://github.com/airblade/vim-gitgutter.git'
-        Plug 'mcchrish/nnn.vim'
+        "Plug 'mcchrish/nnn.vim'
+        Plug 'preservim/nerdtree'
         Plug 'https://github.com/Yggdroot/indentLine'
         Plug 'https://github.com/tpope/vim-surround'
         Plug 'junegunn/vim-easy-align'
@@ -157,6 +163,10 @@ nnoremap <Leader>p :reg <CR>
 
 let g:neocomplete#enable_at_startup = 1
 
+let g:syntastic_javascript_checkers = ['eslint']
+let g:jsx_ext_required = 0 
+" Makes JSX React closing tags different a color than opening tags.
+let g:vim_jsx_pretty_highlight_close_tag = 1
 " if hidden is not set, TextEdit might fail.
 set hidden
 
@@ -200,8 +210,8 @@ command! -nargs=0 Format :call CocAction('format')
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>k  <Plug>(coc-format-selected)
+nmap <leader>k  <Plug>(coc-format-selected)
 
 "}}}
 " indent-line {{{
@@ -379,20 +389,20 @@ set fillchars+=vert:│
 hi VertSplit ctermbg=NONE guibg=NONE
 
 " Customize fzf colors to match your color scheme
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+"let g:fzf_colors =
+"\ { 'fg':      ['fg', 'Normal'],
+"  \ 'bg':      ['bg', 'Normal'],
+"  \ 'hl':      ['fg', 'Comment'],
+"  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+"  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+"  \ 'hl+':     ['fg', 'Statement'],
+"  \ 'info':    ['fg', 'PreProc'],
+"  \ 'border':  ['fg', 'Ignore'],
+"  \ 'prompt':  ['fg', 'Conditional'],
+"  \ 'pointer': ['fg', 'Exception'],
+"  \ 'marker':  ['fg', 'Keyword'],
+"  \ 'spinner': ['fg', 'Label'],
+"  \ 'header':  ['fg', 'Comment'] }
 
 function! s:buflist()
   redir => ls
@@ -450,6 +460,21 @@ nnoremap <S-Tab> :bprevious<CR>
         "set statusline+=%2*%10((%1*line:%2*%l,\ %1*col:%2*%c)%)\ " line and column
         "set statusline+=%2*\ %= 
         "set statusline+=%2*%10((%1*line:%2*%l,\ %1*col:%2*%c)%)\ " line and column
+
+        " COC Status Line integration
+function! StatusDiagnostic() abort
+  let info = get(b:, 'coc_diagnostic_info', {})
+  if empty(info) | return '' | endif
+  let msgs = []
+  if get(info, 'error', 0)
+    call add(msgs, 'E' . info['error'])
+  endif
+  if get(info, 'warning', 0)
+    call add(msgs, 'W' . info['warning'])
+  endif
+  return join(msgs, ' '). ' ' . get(g:, 'coc_status', '')
+endfunction
+
     "}}}
 "}}}
 
@@ -460,3 +485,34 @@ set conceallevel=0
 set laststatus=2
 set nojs
 set mouse=a
+
+
+function! NewJournalEntry()
+    nnoremap <Leader>d :r! date "\%d-\%m-\%Y"<CR>
+endfunction
+
+nnoremap <Leader>d :r! date "+\%a, \%d-\%m-\%Y"<CR>kJ0i[**<ESC>A**](./<ESC>:r! date "+\%d-\%m-\%Y"<CR>kJx<ESC>A.md)<ESC> :! touch "./journal/$(date "+\%d-\%m-\%Y").md"<CR>
+
+let g:vimwiki_list = [{'path': '~/documents/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
+command! Diary VimwikiDiaryIndex
+augroup vimwikigroup
+    autocmd!
+    " automatically update links on read diary
+    autocmd BufRead,BufNewFile diary.md VimwikiDiaryGenerateLinks
+augroup end
+
+
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif

@@ -1,9 +1,10 @@
 {
   "dependencies": {
-    "coc-css": ">=1.2.3",
+    "coc-css": ">=1.2.6",
     "coc-eslint": ">=1.2.7",
     "coc-html": ">=1.2.4",
     "coc-json": ">=1.2.6",
-    "coc-prettier": ">=1.1.14"
+    "coc-prettier": ">=1.1.14",
+    "coc-react-refactor": ">=0.3.0"
   }
 }

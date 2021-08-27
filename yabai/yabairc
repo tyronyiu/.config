@@ -1,23 +1,35 @@
 #!/usr/bin/env sh
 
+# Ensure the scripting addition is always loaded.
+# There were some occasions on which it was installed but not loaded and spaces
+# couldn't be focused.
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # Make sure system preferences is always on top.
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="System Preferences" manage=off
+yabai -m rule --add app="Mail" manage=off
+#yabai -m rule --add app="Google Chrome" manage=off
+#yabai -m rule --add app="iTerm2" manage=off
+#yabai -m rule --add app="Safari" manage=off
+yabai -m rule --add app="Music" manage=off
 #yabai -m rule --add app="zoom.us" manage=off 
 #yabai -m rule --add app="zoom.us" sticky=on
 yabai -m rule --add app="VirtualBoxWM" manage=off
 yabai -m rule --add app="VirtualBox" manage=off
 #yabai -m rule --add app="qutebrowser" manage=on
-yabai -m rule --add app="mpv" manage=on
+#yabai -m rule --add app="mpv" manage=on
 #yabai -m app="Alacritty" --padding abs:20:20:20:20
 #yabai -m rule --add app="iTerm2" opacity=0.5
 #yabai -m rule --add app="zoom.us" opacity=0.5
 
+# Disable window shadow
+yabai -m config window_shadow off
 
 # bar settings
-#yabai -m config status_bar                   off 
-#yabai -m config status_bar_position          bottom
+#yabai -m config status_bar                   on 
+#yabai -m config status_bar_position          top
 #yabai -m config status_bar_text_font         "SF Mono:Bold:22.0"
 #yabai -m config status_bar_icon_font         "SF Mono:Medium:22.0"
 #yabai -m config status_bar_background_color  0xff000000
@@ -30,20 +42,21 @@ yabai -m rule --add app="mpv" manage=on
 # global settings
 yabai -m config focus_follows_mouse          autofocus
 yabai -m config mouse_follows_focus          on
-yabai -m config window_placement             first_child 
+yabai -m config window_placement             second_child
+yabai -m config split_ratio                  0.50
 yabai -m config window_topmost               on
 #yabai -m config window_opacity               off
 #yabai -m config window_opacity_duration      0.5
 yabai -m config window_shadow                off
-#yabai -m config window_border                on
+yabai -m config window_border                on
 #yabai -m config window_border_placement      inset
-#yabai -m config window_border_width          1
-#yabai -m config window_border_radius         0.8
-#yabai -m config active_window_border_topmost on
-#yabai -m config active_window_border_color   0xFFFFFFFF
+yabai -m config window_border_width          1
+yabai -m config window_border_radius         0.8
+yabai -m config active_window_border_topmost on
+yabai -m config active_window_border_color   0xFFFFFFFF
 #Hex(9CE34E)  0xFF9CE34E 
 #FF12F359 > Hex(12F359)
-#yabai -m config normal_window_border_color   0xff505050
+yabai -m config normal_window_border_color   0xff505050
 #yabai -m config insert_window_border_color   0xffd75f5f
 #yabai -m config active_window_opacity        1.0
 #yabai -m config normal_window_opacity        0.7
@@ -55,17 +68,18 @@ yabai -m config mouse_action2                resize
 # general space settings
 yabai -m config layout                       bsp
 #yabai -m config top_padding                  76
-yabai -m config top_padding                  50
-yabai -m config bottom_padding               50
-yabai -m config left_padding                 50
-yabai -m config right_padding                50
-yabai -m config window_gap                   25
+yabai -m config top_padding                  0
+yabai -m config bottom_padding               26
+yabai -m config left_padding                 0
+yabai -m config right_padding                0
+yabai -m config window_gap                   0
 
 # Override default layout for space 1 only
 yabai -m config --space 1 layout bsp
 yabai -m config --space 2 layout bsp
 #yabai -m config --app="Alacritty" --padding abs:20:20:20:20
-#yabai -m config --app="Safari" --toggle float
+#yabai -m config --app="Mail" --toggle float
+#yabai -m config --app="System Preferences" --toggle float
 
 # Floating point value between 0 and 1 (default: 0.5)
 #yabai -m config split_ratio 0.6
@@ -76,5 +90,10 @@ yabai -m config --space 2 layout bsp
 # kill any existing limelight process if one exists, before we launch a new one
 #killall limelight &> /dev/null
 #limelight -c ~/.config/limelight/limelightrc &> /dev/null &
+sudo yabai --load-sa yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 echo "yabai configuration loaded.."
 
+
+
+yabai -m rule --add title='mylauncher' manage=off sticky=on layer=above border=off
+yabai -m rule --add app="Pixelmator Pro" manage=off layer=above

@@ -13,6 +13,7 @@
 		</Resources>
 		<Language id="en_GB" date="">
 			<Font font="0;13;70;90;90;0;.AppleSystemUIFont;49" width="779" height="15" />
+			<Dialog name="Update" width="753" />
 		</Language>
 	</Layout>
 </FileZilla3>

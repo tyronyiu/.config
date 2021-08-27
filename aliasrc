@@ -5,8 +5,6 @@ alias \
     vim="nvim" \
     szrc="source ~/.zshrc" \
     svrc="source ~/.config/nvim/init.vim" \
-    gh="cd ~/" \
-    gb="cd ~/bin" \
     yy="echo -e '!!' | pbcopy" \
     yphrase="head -n 1 ~/.ssh/vulcan | tr -d '\n' | pbcopy" \
     gc="cd ~/.config" \
@@ -15,7 +13,7 @@ alias \
     ezrc="nvim ~/.config/zsh/zshrc" \
     eyrc="nvim ~/.config/yabai/yabairc" \
     esrc="nvim ~/.config/skhd/skhdrc" \
-    vv="cd ~/Documents/almanac && nvim ~/Documents/almanac/index.md" \
+    vv="nvim -c VimwikiIndex"\ 
     ebmks="nvim ~/.config/bookmarks" \
     ezext="nvim ~/.config/zextensions" \
     ekrc="nvim ~/.config/kitty/kitty.conf" \
@@ -23,3 +21,7 @@ alias \
     eurls="nvim ~/Documents/almanac/urls.md" \
     copyLastCmd="fc -ln -1 | awk '{\$1=\$1}1' | tr -d "\n" | pbcopy " \
     gs="git status" \
+    tm="~/bin/tm" \
+#vv="cd ~/Documents/almanac && nvim ~/Documents/almanac/index.md" \
+#gh="cd ~/" \
+#gb="cd ~/bin" \
